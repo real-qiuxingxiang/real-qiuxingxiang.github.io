@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Q's Blog</title><link>https://xingxiang.me/tags/windows/</link><description>Recent content in Windows on Q's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 27 Mar 2022 03:31:00 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows 批量将子目录文件移动到根目录 bat</title><link>https://xingxiang.me/blog/1148/</link><pubDate>Sun, 27 Mar 2022 03:31:00 +0000</pubDate><guid>https://xingxiang.me/blog/1148/</guid><description>放到包含一堆子文件夹的文件根目录运行。
+@echo off for /f &amp;#34;delims=&amp;#34; %%a in (&amp;#39;dir /a-d /b /s &amp;#39;) do (move &amp;#34;%%~a&amp;#34; ./)</description></item><item><title>Windows 批处理文件 .bat 一键修改 DNS</title><link>https://xingxiang.me/blog/908/</link><pubDate>Sat, 28 Dec 2019 13:00:19 +0000</pubDate><guid>https://xingxiang.me/blog/908/</guid><description>创建文件 dns.bat
+@echo off chcp 65001 netsh interface ip set dnsservers &amp;#34;以太网&amp;#34; static 114.114.114.114 primary netsh interface ip add dnsservers &amp;#34;以太网&amp;#34; 8.8.8.8 index=2 ipconfig /flushdns 右键-以管理员身份运行即可，以太网改为你的网络名称</description></item><item><title>Windows 10 UEFI 引导错误 蓝屏</title><link>https://xingxiang.me/blog/877/</link><pubDate>Tue, 04 Jul 2017 14:58:49 +0000</pubDate><guid>https://xingxiang.me/blog/877/</guid><description>修复如图错误
+UEFI引导基本原理 1.ESP引导分区 ESP磁盘分区是GPT格式硬盘放EFI引导文件的磁盘，在MBR格式硬盘中也可以由任一fat
+格式磁盘分区代替
+2.EFI文件结构 efi\boot\bootx64.efi efi\microsoft\boot\bcd 3.EFI启动过程 UEFI Bios启动时，自动查找硬盘下ESP分区的bootx64.efi，然后由bootx64.efi引导
+EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system32\winload.efi）
+使用 bcdboot 命令修复 1.启动64bit WindowsPE，Bios/UEFI启动进入下都可以
+2.启动64位8PE，并用ESP分区挂载器或Diskgenuis挂载ESP分区
+3.打开cmd，输入以下命令并运行
+bcdboot c:\windows /s o: /f uefi /l zh-cn 其中：
+c:\windows 硬盘系统目录，根据实际情况修改 /s o: 指定esp分区所在磁盘，根据实际情况修改 /f uefi 指定启动方式为uefi /l zh-cn 指定uefi启动界面语言为简体中文 注：64位7PE不带/s参数，故7PE不支持bios启动下修复</description></item><item><title>Windows 一键导入 OEM 信息</title><link>https://xingxiang.me/blog/801/</link><pubDate>Mon, 31 Oct 2016 09:12:16 +0000</pubDate><guid>https://xingxiang.me/blog/801/</guid><description>暑假时购入Dell XPS 15 9550，到手后马上重装了了系统，强迫症忍不了有出厂软件的系统，然而重装完之后关于页面的OEM信息没了，不能好好装逼了，逼死强迫症。
+在此给大家分享一个工具，导入OEM信息，让大家好好装逼，效果看图吧。
+下载: 一键导入__卸载OEM信息.zip</description></item></channel></rss>

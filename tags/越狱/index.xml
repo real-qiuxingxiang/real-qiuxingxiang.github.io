@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>越狱 on Q's Blog</title><link>https://xingxiang.me/tags/%E8%B6%8A%E7%8B%B1/</link><description>Recent content in 越狱 on Q's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 02 Mar 2013 06:29:14 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>【Cydia 插件汉化教程】 两种方法图文视频详细教程</title><link>https://xingxiang.me/blog/466/</link><pubDate>Sat, 02 Mar 2013 06:29:14 +0000</pubDate><guid>https://xingxiang.me/blog/466/</guid><description>转载请标明出处：https://xingxiang.me/blog/466
+请大家支持正版，使用正版软件，插件
+deb制作教程：https://xingxiang.me/blog/463/
+在ios上的制作方法 ：https://xingxiang.me/blog/465/
+总共有两个方法，废话不多说，开始…… * 插件常放置文件的目录（也可以到Cydia里查看目录） //Library/PreferenceBundles
+//Library/PreferenceLoader/Preferences
+//Library/MobileSubstrate/DynamicLibrarie
+//System/Library/PreferenceBundles
+//Library/Weeloader
+//System/Library/WeeAppPlugins
+一般所有的插件都能在其中一个目录里进行汉化 ，大家可以像我一样在iFile创建一个收藏夹…
+方法一： （优点: 较方便。缺点：更新插件会丢失汉化，有的菜单二级目录无法汉化。so 不推荐）
+已Zephyr为例： 首先看到的界面当然是英文的 然后打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录） 找到Zephyr.plist 点击，选择使用文本编辑器打开 然后我们先汉化第一个 文本 ：Enabled 点击搜索，输入Enabled
+然后选择这个单词 注意：旁边的标点别乱删 改成 开关 保存
+杀掉设置后台
+10.回到设置里一看
+Finally 成功了!!!!!!
+但是在此不推荐第一种，因为一些多二级菜单的插件汉化不彻底，而且容易丢失。
+方法一 视频演示： 【简版 v2.0】youku链接：http://v.youku.com/v_show/id_XNTMwODYxNTY4.html
+【详细有声版 v2.0】youku: http://v.youku.com/v_show/id_XNTMxMDYwNzk2.html
+第二种方法： （极为推荐，I prefer this）
+废话不多说，还是以Zephyr为例…… 打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录） 在此目录创建语言包 简体：zh_CN.lproj
+繁体：zh_TW.lproj
+3. 找到Zephyr.plist 然后在zh_CN.lproj里创建 Zephyr.strings （文件名与你想修改的plist相同） 一定要 选 常规文件
+点击这个strings 选择属性表编辑器，打开是空白的
+点击+ 直接输入你在设置里看到的文字，注意大小写</description></item></channel></rss>

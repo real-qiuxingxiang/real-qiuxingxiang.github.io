@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Q's Blog</title><link>https://xingxiang.me/blog/</link><description>Recent content in Blogs on Q's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 21 Apr 2022 07:07:05 +0000</lastBuildDate><atom:link href="https://xingxiang.me/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Python Excel 和 Json 互转</title><link>https://xingxiang.me/blog/1155/</link><pubDate>Thu, 21 Apr 2022 07:07:05 +0000</pubDate><guid>https://xingxiang.me/blog/1155/</guid><description>一、Excel 转 Json import pandas pandas.read_excel(&amp;#34;Data.xlsx&amp;#34;, sheet_name=0).to_json(&amp;#34;1.json&amp;#34;, orient=&amp;#34;records&amp;#34;, force_ascii=False) 二、Json 转 Excel import pandas pandas.read_json(&amp;#34;input.json&amp;#34;,dtype=str).to_excel(&amp;#34;output.xlsx&amp;#34;)</description></item><item><title>Python 批量按文件名关键字新建文件夹并归档文件</title><link>https://xingxiang.me/blog/1149/</link><pubDate>Sun, 27 Mar 2022 03:39:32 +0000</pubDate><guid>https://xingxiang.me/blog/1149/</guid><description>按需求修改规则使用，现在代码的规则对应的文件名为：xxx-xxx-xxx-xxx-xxx-xxx.jpg。
+import os import shutil current_path = os.getcwd() print(&amp;#39;当前目录：&amp;#39;+current_path) filename_list = os.listdir(current_path) print(&amp;#39;当前目录下文件：&amp;#39;,filename_list) print(&amp;#39;正在分类整理进文件夹ing...&amp;#39;) for filename in filename_list: try: name1, name2, name3, name4, name5, name6 = filename.split(&amp;#39;-&amp;#39;) //规则 dirName = name1 + &amp;#34;-&amp;#34; + name2 + &amp;#34;-&amp;#34; + name3 + &amp;#34;-&amp;#34; + name4 + &amp;#34;-&amp;#34; + name5 //规则 try: os.mkdir(dirName) print(&amp;#39;创建文件夹：&amp;#39; + dirName) except: pass try: shutil.move(current_path+&amp;#39;/&amp;#39;+filename, current_path+&amp;#39;/&amp;#39;+dirName) print(filename+&amp;#39;转移成功！&amp;#39;) except Exception as e: print(&amp;#39;移动失败:&amp;#39; + e) except: pass print(&amp;#39;整理完毕！&amp;#39;)</description></item><item><title>Windows 批量将子目录文件移动到根目录 bat</title><link>https://xingxiang.me/blog/1148/</link><pubDate>Sun, 27 Mar 2022 03:31:00 +0000</pubDate><guid>https://xingxiang.me/blog/1148/</guid><description>放到包含一堆子文件夹的文件根目录运行。
+@echo off for /f &amp;#34;delims=&amp;#34; %%a in (&amp;#39;dir /a-d /b /s &amp;#39;) do (move &amp;#34;%%~a&amp;#34; ./)</description></item><item><title>Python 批量分割裁剪图片</title><link>https://xingxiang.me/blog/1147/</link><pubDate>Sun, 27 Mar 2022 03:20:01 +0000</pubDate><guid>https://xingxiang.me/blog/1147/</guid><description>放到图片目录下运行，以下代码为从中间将图片一分为二，请根据自己需要修改。
+from PIL import Image import os path = os.getcwd() print(&amp;#39;当前目录：&amp;#39;+path) path_list = os.listdir(path) print(path_list) j=1 for i in path_list: a = open(os.path.join(path,i),&amp;#39;rb&amp;#39;) img = Image.open(a) w = img.width h = img.height print(&amp;#39;正在处理图片&amp;#39;,i,&amp;#39;宽&amp;#39;,w,&amp;#39;长&amp;#39;,h) box1 = (0,0,w*0.5,h) img1 = img.crop(box1) box2 = (w*0.5,0,w,h) img2 = img.crop(box2) img1.save(str(j)+&amp;#39;.jpg&amp;#39;, dpi=img1.info[&amp;#34;dpi&amp;#34;]) j = j + 1 img2.save(str(j)+&amp;#39;.jpg&amp;#39;, dpi=img2.info[&amp;#34;dpi&amp;#34;]) j = j + 1</description></item><item><title>Python 批量旋转图片</title><link>https://xingxiang.me/blog/1145/</link><pubDate>Sun, 27 Mar 2022 03:17:43 +0000</pubDate><guid>https://xingxiang.me/blog/1145/</guid><description>放到图片目录下运行。
+from PIL import Image import os path = os.getcwd() print(&amp;#39;当前目录：&amp;#39;+path) path_list = os.listdir(path) print(path_list) for i in path_list: a = open(os.path.join(path,i),&amp;#39;rb&amp;#39;) img = Image.open(a) w = img.width h = img.height print(&amp;#39;正在处理图片&amp;#39;,i,&amp;#39;宽&amp;#39;,w,&amp;#39;长&amp;#39;,h) if h &amp;gt; w: img.rotate(180, expand=True).save(&amp;#39;0&amp;#39;+i, dpi=img.info[&amp;#34;dpi&amp;#34;]) print(&amp;#39;旋转成功&amp;#39;) print(&amp;#34;&amp;#39;{}&amp;#39;目录下所有图片已经保存到本文件目录下。&amp;#34;.format(path))</description></item><item><title>nginx SNI 配置</title><link>https://xingxiang.me/blog/1095/</link><pubDate>Mon, 19 Apr 2021 09:36:01 +0000</pubDate><guid>https://xingxiang.me/blog/1095/</guid><description>Server Name Indication (SNI) ，也被称为TLS 服务器名称指示。
+本配置基于CentOS 8，且仅仅开启nginx的SNI功能。
+1.新建用户 useradd -r -d /var/cache/nginx/ -s /sbin/nologin -U nginx mkdir -p /var/cache/nginx/ chown -R nginx:nginx /var/cache/nginx/ 2. 编译安装nginx，仅仅编译所需要的模块 cd /usr/local/src wget https://nginx.org/download/nginx-1.19.10.tar.gz tar -xzvf nginx-1.19.10.tar.gz cd nginx-1.19.10 ./configure --prefix=/etc/nginx --user=nginx --group=nginx --with-stream --with-stream_ssl_preread_module make make install 3. 测试nginx是否安装成功 nginx -t 4. 创建nginx服务（已CentOS为例） cd /lib/systemd/system/ vim nginx.service # [Unit] # Description=nginx # Documentation=https://nginx.org/en/docs/ # After=network-online.target remote-fs.target nss-lookup.target # Wants=network-online.target # [Service] # Type=forking # PIDFile=/etc/nginx/logs/nginx.</description></item><item><title>香港科技大学雅思电子送分 雅思电子成绩单</title><link>https://xingxiang.me/blog/1047/</link><pubDate>Thu, 23 Apr 2020 02:22:57 +0000</pubDate><guid>https://xingxiang.me/blog/1047/</guid><description>拿到conditional offer之后，就要寄送材料来获得正式offer。
+其中雅思成绩HKUST推荐寄送电子成绩单：
+如果你在中国大陆考的雅思，登录https://ielts.neea.edu.cn/，在额外成绩单寄送页面，选择你想额外寄送的考试，档案号填申请号，其他如图填写：
+大约一个月后，即可在申请官网查看到寄送状态：</description></item><item><title>英文维基百科申请IP封禁豁免权限 IPBE</title><link>https://xingxiang.me/blog/1044/</link><pubDate>Wed, 08 Apr 2020 01:24:12 +0000</pubDate><guid>https://xingxiang.me/blog/1044/</guid><description>&lt;p>对于处在中国大陆的维基人，因众所周知的原因，需要使用代理访问维基百科，但英文维基百科会封禁一部分代理 IP 。&lt;/p>
+&lt;p>这个时候就需要申请 IPBE 权限：&lt;a href="https://en.wikipedia.org/wiki/Wikipedia:IP_block_exemption">Wikipedia:IP block exemption&lt;/a>&lt;/p></description></item><item><title>Dell XPS 15 9550 黑苹果 macOS Catalina 双系统 不用 U 盘</title><link>https://xingxiang.me/blog/1021/</link><pubDate>Thu, 27 Feb 2020 06:53:21 +0000</pubDate><guid>https://xingxiang.me/blog/1021/</guid><description>因为疫情原因，在家闲的慌，想折腾一下 Hackintosh，但是手头上没有 U 盘，就想看看能不能不用 U 盘安装黑苹果。
+其实完全是可以的，参见：macOS Catalina 10.15.6(17G73)恢复版系统镜像包
+这个方法类似以前的 ghost 镜像，恢复硬盘，安装完后建议新建一个用户，把原来的用户删除。
+最重要的还是 EFI 分区的配置，上面的镜像是通用的，Clover 则是根据每一部机器定制的。
+XPS 9550 的 Clover： https://github.com/xxxzc/xps15-9550-macos （我根据这个修改）
+https://github.com/krim404/DellXPS15-9550-OSX</description></item><item><title>Windows 批处理文件 .bat 一键修改 DNS</title><link>https://xingxiang.me/blog/908/</link><pubDate>Sat, 28 Dec 2019 13:00:19 +0000</pubDate><guid>https://xingxiang.me/blog/908/</guid><description>创建文件 dns.bat
+@echo off chcp 65001 netsh interface ip set dnsservers &amp;#34;以太网&amp;#34; static 114.114.114.114 primary netsh interface ip add dnsservers &amp;#34;以太网&amp;#34; 8.8.8.8 index=2 ipconfig /flushdns 右键-以管理员身份运行即可，以太网改为你的网络名称</description></item><item><title>Twitter 取消所有喜欢</title><link>https://xingxiang.me/blog/991/</link><pubDate>Mon, 25 Nov 2019 09:35:15 +0000</pubDate><guid>https://xingxiang.me/blog/991/</guid><description>用 Chrome 打开 Twitter 网页版 Like 页面，在 Console 运行以下脚本，等待便可：
+setInterval(() =&amp;gt; { for (const d of document.querySelectorAll(&amp;#39;div[data-testid=&amp;#34;unlike&amp;#34;]&amp;#39;)) { d.click() } window.scrollTo(0, document.body.scrollHeight) }, 1000)</description></item><item><title>基于Django 开发的博客系统</title><link>https://xingxiang.me/blog/975/</link><pubDate>Wed, 22 Aug 2018 07:50:40 +0000</pubDate><guid>https://xingxiang.me/blog/975/</guid><description> Python 3.6.6 和 Django 2.1.5 MySQL xadmin 后台管理 Simditor Markdown 编辑器，图片 Drag and Drop 上传 代码高亮 RSS订阅 标签、阅读量 haystack 文章内容搜索 Valine 评论系统 集成 django-compressor，静态文件压缩 Usage 新建虚拟环境 git clone git@github.com:chiuxingxiang/Django-Blog.git virtualenv --python=&amp;amp;lt;py3path&amp;gt; venv . venv/bin/activate 安装依赖 pip install -r requirements.txt 数据库迁移 python manage.py makemigrations python manage.py migrate 创建管理员 python manage.py shell from django.contrib.auth.models import User user=User.objects.create_superuser(&amp;#39;用户名&amp;#39;,&amp;#39;邮箱&amp;#39;,&amp;#39;密码&amp;#39;) 创建搜索索引 python manage.py rebuild_index 压缩静态文件 python manage.py collectstatic python manage.py compress 首页 详情页 + 评论 Tag List xadmin后台 Simditor Markdown 文章编辑器 图片上传</description></item><item><title>Python 3.7 + BeautifulSoup 4 ：豆瓣 Top 250 爬虫</title><link>https://xingxiang.me/blog/966/</link><pubDate>Thu, 26 Jul 2018 13:22:46 +0000</pubDate><guid>https://xingxiang.me/blog/966/</guid><description>输出 .csv 文件，如图：
+import requests import csv import random import time import socket import http.client from bs4 import BeautifulSoup def get_html(url, data = None): header = { &amp;#39;Accept&amp;#39;: &amp;#39;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&amp;#39;, &amp;#39;Accept-Encoding&amp;#39;: &amp;#39;gzip, deflate, br&amp;#39;, &amp;#39;Accept-Language&amp;#39;: &amp;#39;zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7&amp;#39;, &amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36&amp;#39; } timeout = random.choice(range(80, 100)) while True: try: response = requests.get(url, headers = header, timeout = timeout) response.encoding = &amp;#39;utf-8&amp;#39; break except socket.</description></item><item><title>Python 3.7 + BeautifulSoup 4 + Scrapy ：简单爬虫实例</title><link>https://xingxiang.me/blog/962/</link><pubDate>Thu, 26 Jul 2018 13:15:47 +0000</pubDate><guid>https://xingxiang.me/blog/962/</guid><description>&lt;p>放假无聊，无聊写个爬虫，把本博客的文章列表页面（https://xingxiang.me/blog）扒下来&lt;/p></description></item><item><title>PHP + ipsw.me API 简陋的 iOS 固件下载</title><link>https://xingxiang.me/blog/942/</link><pubDate>Mon, 09 Apr 2018 12:02:09 +0000</pubDate><guid>https://xingxiang.me/blog/942/</guid><description>无聊写了一个 iOS 固件下载页面 https://xingxiang.me/ipsw 用了 ipsw.me 的 API &amp;lt;h3&amp;gt;1.请选择要下载的产品&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt; &amp;lt;a href=&amp;#34;platform?product=iPhone&amp;#34;&amp;gt;iPhone&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; &amp;lt;a href=&amp;#34;platform?product=iPad&amp;#34;&amp;gt;iPad&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; &amp;lt;a href=&amp;#34;platform?product=Apple TV&amp;#34;&amp;gt;Apple TV&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;h3&amp;gt;2.请选择要下载的型号&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt; &amp;lt;?php $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, &amp;#34;https://api.ipsw.me/v4/devices&amp;#34;); curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($ch, CURLOPT_HEADER, FALSE); curl_setopt($ch, CURLOPT_HTTPHEADER, array( &amp;#34;Accept: application/json&amp;#34; )); $response = curl_exec($ch); curl_close($ch); $devices = json_decode($response, true); $product = $_GET[&amp;#34;product&amp;#34;]; foreach (array_reverse($devices) as $device){ if(strpos($device[&amp;#39;name&amp;#39;],$product) !== false){ echo &amp;#39;&amp;lt;a href=&amp;#34;version?identifier=&amp;#39;.$device[&amp;#39;identifier&amp;#39;].&amp;#39;&amp;#34;&amp;gt;&amp;#39;.$device[&amp;#39;name&amp;#39;].&amp;#39;&amp;lt;/a&amp;gt;&amp;lt;/br&amp;gt;&amp;#39;; } } ?&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;h3&amp;gt;3.请选择要下载的版本&amp;lt;/h3&amp;gt; &amp;lt;?php $identifier = $_GET[&amp;#34;identifier&amp;#34;]; $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, &amp;#34;https://api.</description></item><item><title>WordPress 需要访问您网页服务器的权限，需输入 FTP 的解决办法</title><link>https://xingxiang.me/blog/927/</link><pubDate>Fri, 02 Mar 2018 09:01:24 +0000</pubDate><guid>https://xingxiang.me/blog/927/</guid><description>导致这个问题的根本原因还是文件夹权限的问题，而且不是访问、读取、写入这类的 777 权限，而是所属用户的用户权限，既然如此我们修改用户权限就可以解决了。
+LAMP 环境下解决方法：
+chown -R apache /data/www/xxx.com</description></item><item><title>SSH 免 IP 用户名 连接</title><link>https://xingxiang.me/blog/925/</link><pubDate>Mon, 26 Feb 2018 13:32:08 +0000</pubDate><guid>https://xingxiang.me/blog/925/</guid><description>配置服务器别名，使用别名代替 IP。
+打开或新建 ~/.ssh/config 文件，输入以下内容：
+Host server-alias # server-alias为SSH链接的服务器别名，随便改自己的 HostName server-ip # 服务器 IP Port 22 # 端口 User username # 服务器端用户名 PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa # 私钥，默认为 ~/.ssh/id_rsa 以后就可以通过以下命令连接 SSH
+ssh server-alias</description></item><item><title>SSH 免密码登录 ssh-copy-id 命令</title><link>https://xingxiang.me/blog/923/</link><pubDate>Thu, 22 Feb 2018 13:19:33 +0000</pubDate><guid>https://xingxiang.me/blog/923/</guid><description>如果你管理一台 Linux Server，那么你就会知道每次 SSH 登录时或者使用 scp 复制文件时都要输入密码是一个多么繁琐的过程，免密码登陆其实很简单。
+SSH无密码登录的设置步骤：
+1.本地 Linux 生成 SSH 密钥和 SSH 公钥 首先我们在自己的 Linux 系统上生成一对 SSH Key：SSH密钥和SSH公钥。密钥保存在自己的Linux系统上。
+然后公钥上传到 Linux Server，之后我们就能无密码SSH登录了。
+打开终端，使用下面的 ssh-keygen 来生成 RSA 密钥和公钥．-t表示type，就是说要生成RSA加密的钥匙．
+ssh-keygen -t rsa RSA也是默认的加密类型．所以你也可以只输入 ssh-keygen。默认的RSA长度是2048位，也可以指定 4096 位长度．
+ssh-keygen -b 4096 -t rsa 生成 SSH Key 的过程中会要求你指定一个文件来保存密钥，按Enter键使用默认即可。然后需要输入一个密码来加密你的SSH Key。
+SSH 密钥会保存在 home 目录下的.ssh/id_rsa 文件中。
+SSH公钥保存在.ssh/id_rsa.pub文件中．
+Generating public/private rsa key pair. Enter file in which to save the key (/home/matrix/.ssh/id_rsa): 按Enter键 Enter passphrase (empty for no passphrase): 输入一个密码 Enter same passphrase again: 再次输入密码 Your identification has been saved in /home/matrix/.</description></item><item><title>CentOS: 增加/调整 Swap 大小</title><link>https://xingxiang.me/blog/922/</link><pubDate>Thu, 22 Feb 2018 12:23:43 +0000</pubDate><guid>https://xingxiang.me/blog/922/</guid><description>第一步：关闭 Swap
+sudo swapoff -a 第二步：把当前的 Swap 文件增大
+sudo dd if=/dev/zero of=/swapfile bs=1M count=1024 bs 指的是 Block Size，就是每一块的大小。这里是 1M，意思就是 count 以 1M 为单位的。
+count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新的 Swap 大小为 1Gb。
+第三步：把增大后的文件变为 Swap 文件。
+sudo mkswap /swapfile 第四步：重新打开 Swap
+sudo swapon /swapfile 第五步：让 Swap 在启动的时候，自动生效。打开 /etc/fstab 文件
+sudo vim /etc/fstab 第六步：再vim里，加上以下命令。然后保存。
+/swapfile swap swap defaults 0 0</description></item><item><title>C语言 动态创建链表 Linked List</title><link>https://xingxiang.me/blog/914/</link><pubDate>Thu, 28 Dec 2017 05:46:56 +0000</pubDate><guid>https://xingxiang.me/blog/914/</guid><description>#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; typedef struct LinkedListNode { int data; struct LinkedListNode *next; } NODE; NODE *creatList(int n, int m) { NODE *temp=NULL; NODE *origin; NODE *extend; origin=(NODE*)malloc(sizeof(NODE)); temp=origin; origin-&amp;gt;next=NULL; for(int i=1;i&amp;amp;lt;=n;i+=1){ extend=(NODE*)malloc(sizeof(NODE)); extend-&amp;gt;data=i; extend-&amp;gt;next=origin-&amp;gt;next; origin-&amp;gt;next=extend; origin=origin-&amp;gt;next; } return temp; } void outputLink(NODE *head) { NODE *temp; temp=head-&amp;gt;next; printf(&amp;#34;HEAD&amp;#34;); while(temp){ printf(&amp;#34;-&amp;gt;%d&amp;#34;,temp-&amp;gt;data); temp=temp-&amp;gt;next; } } int main() { NODE *head; head=creatList(10,10); outputLink(head); return 0; }</description></item><item><title>macOS 终端使用代理 Proxy</title><link>https://xingxiang.me/blog/777/</link><pubDate>Sat, 02 Dec 2017 14:18:40 +0000</pubDate><guid>https://xingxiang.me/blog/777/</guid><description>打开终端，运行：
+vim ~/.bash_profile //使用bash vim ~/.zprofile //使用zsh 复制到 .bash_profile 或 .zprofile ：
+export https_proxy=http://127.0.0.1:6152 //替换为你自己的代理 export http_proxy=http://127.0.0.1:6152 //替换为你自己的代理 保存配置，运行：
+source ~/.bash_profile //使用bash source ~/.zprofile //使用zsh 该方法配置好后，在 Jetbrain 等 IDE 的终端下同样有用。</description></item><item><title>C语言 大数加法 减法 乘法</title><link>https://xingxiang.me/blog/902/</link><pubDate>Mon, 27 Nov 2017 14:36:45 +0000</pubDate><guid>https://xingxiang.me/blog/902/</guid><description>#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;string.h&amp;gt; void stringReverse(char * p)//逆序字符串 { int i,len; char temp; len = strlen(p); for(i=0; i&amp;amp;lt;(len/2); i++) { temp = p[i]; p[i] = p[len-1-i]; p[len-1-i] = temp; } } char* getString()//动态字符串输入 { char *str; char *_str; int i=1; str=(char*)malloc(sizeof(char)*(i+1)); while((str[i-1]=getchar())!=&amp;#39;\n&amp;#39;){ i+=1; _str=(char*)malloc(strlen(str)+1); str[i-1]=&amp;#39;\0&amp;#39;; strcpy(_str,str); free(str); str=(char*)malloc(sizeof(char)*(i+1)); if(str==NULL){ free(_str); printf(&amp;#34;Not enough memory!&amp;#34;); return NULL; } strcpy(str,_str); free(_str); } str[i-1]=&amp;#39;\0&amp;#39;; return str; } char* remove_0(char *c)//删除0 { char *temp,*ch; temp=c; while(*temp){ if(*temp!</description></item><item><title>C语言 扫雷</title><link>https://xingxiang.me/blog/890/</link><pubDate>Mon, 04 Sep 2017 03:44:42 +0000</pubDate><guid>https://xingxiang.me/blog/890/</guid><description>Minesweeper in C
+C语言扫雷
+9*9
+可以自动消除一大片
+代码如下：
+#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;time.h&amp;gt; #define N 9 //9*9扫雷 int sum = 10; //雷数目 int mine[N][N] = {0}; //雷数组 int map[N][N]; //显示数组 int markDirection[8][2] = {{0,1},{1,1},{1,0},{1,-1},{0,-1},{-1,-1},{-1,0},{-1,1}}; //8个方向 void printMap() //打印地图 { int i = 0,j = 0; for(i=0;i&amp;amp;lt;N;i++) { for(j=0;j&amp;amp;lt;N;j++) { printf(&amp;#34;%d &amp;#34;,map[i][j]); } printf(&amp;#34;\n&amp;#34;); } } void setMine() //埋雷 { srand((int)time(0)); int x=0,y=0; while(sum &amp;gt;= 0) { x = (rand()%(9-1+1))+1; y = (rand()%(9-1+1))+1; if(mine[x][y] !</description></item><item><title>Windows 10 UEFI 引导错误 蓝屏</title><link>https://xingxiang.me/blog/877/</link><pubDate>Tue, 04 Jul 2017 14:58:49 +0000</pubDate><guid>https://xingxiang.me/blog/877/</guid><description>修复如图错误
+UEFI引导基本原理 1.ESP引导分区 ESP磁盘分区是GPT格式硬盘放EFI引导文件的磁盘，在MBR格式硬盘中也可以由任一fat
+格式磁盘分区代替
+2.EFI文件结构 efi\boot\bootx64.efi efi\microsoft\boot\bcd 3.EFI启动过程 UEFI Bios启动时，自动查找硬盘下ESP分区的bootx64.efi，然后由bootx64.efi引导
+EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system32\winload.efi）
+使用 bcdboot 命令修复 1.启动64bit WindowsPE，Bios/UEFI启动进入下都可以
+2.启动64位8PE，并用ESP分区挂载器或Diskgenuis挂载ESP分区
+3.打开cmd，输入以下命令并运行
+bcdboot c:\windows /s o: /f uefi /l zh-cn 其中：
+c:\windows 硬盘系统目录，根据实际情况修改 /s o: 指定esp分区所在磁盘，根据实际情况修改 /f uefi 指定启动方式为uefi /l zh-cn 指定uefi启动界面语言为简体中文 注：64位7PE不带/s参数，故7PE不支持bios启动下修复</description></item><item><title>树莓派3 + LCD1602 硬件连接 代码</title><link>https://xingxiang.me/blog/843/</link><pubDate>Sun, 01 Jan 2017 10:07:22 +0000</pubDate><guid>https://xingxiang.me/blog/843/</guid><description>LCD 1602 树莓派Model B Pin示意图： 硬件连接（从上到下对应LCD1602 1-16号Pin） Pin 用法 VSS 接地 VDD 接5V电源 VO 液晶对比度调节，接电位器（需要一个10k电位器）中间的引脚，电位器两边的引脚分别接5V和接地。 RS 寄存器选择，接GPIO14 RW 读写选择，接地，表示写模式 EN 使能信号，接GPIO15 D0 数据位0，4位工作模式下不用，不接 D1 数据位1，4位工作模式下不用，不接 D2 数据位2，4位工作模式下不用，不接 D3 数据位3，4位工作模式下不用，不接 D4 数据位4，接GPIO17 D5 数据位5，接GPIO18 D6 数据位6，接GPIO27 D7 数据位7，接GPIO22 A 液晶屏背光+，接5V K 液晶屏背光-，接地 接好后通电就会显示一行空白，一行黑格子，如果什么也不显示，调节电位器电阻即可。
+代码 Github ： https://github.com/lifanxi/rpimenu
+解压后有 Adafruit_CharLCD.py 文件，运行此文件在LCD上会显示两行字符：LCD 1602 Test, 123456789ABCDEF。
+只需要在此文件上进行一下修改就可以自定义显示你想要的内容了（如果不是按上表的GPIO，记住修改）。</description></item><item><title>树莓派3 定时上传CUP温度到 yeelink 代码</title><link>https://xingxiang.me/blog/842/</link><pubDate>Fri, 30 Dec 2016 13:24:03 +0000</pubDate><guid>https://xingxiang.me/blog/842/</guid><description>CPUtemperature.py 代码
+#!/usr/bin/env python import requests import json import time file = open(&amp;#34;/sys/class/thermal/thermal_zone0/temp&amp;#34;) CPUtemperature = float(file.read()) / 1000 file.close print &amp;#34;CPU Temperature :&amp;#34;, CPUtemperature topost_CPUtemperature_payload={&amp;#39;value&amp;#39;:CPUtemperature} url_CPUtemperature=&amp;#39;你的传感器URL&amp;#39; header={&amp;#39;U-ApiKey&amp;#39;:&amp;#39;你的Apikey&amp;#39;, &amp;#39;content-type&amp;#39;: &amp;#39;application/json&amp;#39;} post_CPUtemperature = requests.post(url_CPUtemperature,headers=header,data=json.dumps(topost_CPUtemperature_payload)) yeelink.sh 代码
+sudo python /home/pi/yeelink.py 运行
+sudo chmod +x /home/pi/yeelink.sh 设置定时5分钟运行一次
+sudo crontab -e 加入
+*/5 * * * * /home/pi/yeelink.sh</description></item><item><title>树莓派3 + DHT11 温湿度传感器 + 定时上传 yeelink 代码 + 数据过滤</title><link>https://xingxiang.me/blog/840/</link><pubDate>Fri, 30 Dec 2016 01:19:44 +0000</pubDate><guid>https://xingxiang.me/blog/840/</guid><description>DHT11.py 代码
+#!/usr/bin/python import RPi.GPIO as GPIO import time import requests import json #Read data from DHT11 def DHT11(): channel = 17 data = [] j = 0 GPIO.setmode(GPIO.BCM) time.sleep(1) GPIO.setup(channel, GPIO.OUT) GPIO.output(channel, GPIO.LOW) time.sleep(0.02) GPIO.output(channel, GPIO.HIGH) GPIO.setup(channel, GPIO.IN) while GPIO.input(channel) == GPIO.LOW: continue while GPIO.input(channel) == GPIO.HIGH: continue while j &amp;amp;lt; 40: k = 0 while GPIO.input(channel) == GPIO.LOW: continue while GPIO.input(channel) == GPIO.HIGH: k += 1 if k &amp;gt; 100: break if k &amp;amp;lt; 8: data.</description></item><item><title>树莓派apt加速 替换apt源为国内镜像</title><link>https://xingxiang.me/blog/838/</link><pubDate>Mon, 26 Dec 2016 06:32:27 +0000</pubDate><guid>https://xingxiang.me/blog/838/</guid><description>因为众所周知的原因，Linux默认的apt源在国内神慢……换吧
+1.改sources.list
+sudo vim /etc/apt/sources.list 内容全部改为
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi #deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi 2.改raspi.list
+sudo vim /etc/apt/sources.list.d/raspi.list 内容全部改为
+deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui deb-src http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui 爽快！</description></item><item><title>Windows 一键导入 OEM 信息</title><link>https://xingxiang.me/blog/801/</link><pubDate>Mon, 31 Oct 2016 09:12:16 +0000</pubDate><guid>https://xingxiang.me/blog/801/</guid><description>暑假时购入Dell XPS 15 9550，到手后马上重装了了系统，强迫症忍不了有出厂软件的系统，然而重装完之后关于页面的OEM信息没了，不能好好装逼了，逼死强迫症。
+在此给大家分享一个工具，导入OEM信息，让大家好好装逼，效果看图吧。
+下载: 一键导入__卸载OEM信息.zip</description></item><item><title>关闭/打开 Mac 开机声音</title><link>https://xingxiang.me/blog/760/</link><pubDate>Sat, 17 Oct 2015 14:06:48 +0000</pubDate><guid>https://xingxiang.me/blog/760/</guid><description>关闭声音：
+sudo nvram StartupMute=%01 开启声音：
+sudo nvram StartupMute=%00</description></item><item><title>记一次 OS X 用户文件夹损坏修复过程</title><link>https://xingxiang.me/blog/707/</link><pubDate>Sun, 21 Jun 2015 13:02:06 +0000</pubDate><guid>https://xingxiang.me/blog/707/</guid><description>昨天，突然想在Mac上临时搭个FTP服务器，随便下载了一个PureFTPd安装，意外就这样发生了……
+安装完之后，死机了，没办法，只能强制按电源键关机……
+重新开机，照常输入我的账号和密码登陆，谁知道死活说我密码错误，卧槽……
+又没办法啊，只能开机按option进入Recovery系统去了，先设置了一下root账号的密码，重新开机登陆root账号，保留原来的用户文件夹，重新创建一个管理员用户，再把原来的用户文件夹链接回去……
+又折腾了一个小时……</description></item><item><title>解决 iOS 英文语言下通讯录索引排序混乱的问题</title><link>https://xingxiang.me/blog/670/</link><pubDate>Sun, 08 Mar 2015 02:57:27 +0000</pubDate><guid>https://xingxiang.me/blog/670/</guid><description>当系统语言设置为英文时，中文联系人将不再按拼音排序，索引全归为#，如何解决此问题？网络上流传的大多是手动逐个添加的笨办法，在这里我们将介绍一个方便的批量处理方法，迅速解决此问题。
+下载安装Phonetic Contacts：https://apps.apple.com/cn/app/phonetic-contacts/id1078961574</description></item><item><title>41周后 iPhone3GS 有锁机6.1.6+完美越狱+解锁来信号</title><link>https://xingxiang.me/blog/611/</link><pubDate>Sun, 02 Nov 2014 03:07:35 +0000</pubDate><guid>https://xingxiang.me/blog/611/</guid><description>折腾好多天，在论坛里试了多种方法，都是越狱后无信号，终于换了个方法，来信号了，步骤：
+前面刷机步骤大致相同，先进入DFU模式，用iTunes恢复iOS 6.1.6的固件，漫长的刷机过程，刷完后激活不了。 打开Redsn0w 0.9.15b3，点Extras——Select IPSW——选择iOS6.0固件，跳出来的窗口点”是“，然后Back，点Jailbreak，等待加载，点√Cydia，点√Install iPad Baseband，下一步，进入DUF模式，等待。 3.手机开机了，等手机开机后，再次打开Redsn0w，点其它——选择固件——选择iOS6.0，跳出来的窗口还是点Yes，再点第一个选项——Just Boot，进入DUF模式，OK。 开机后点Cydia进入，不要更新直接退出。 再打开Redsn0w，点Extras——Select IPSW——选择iOS6.0固件，还是跳出来的窗口点”Yes“，然后Back，点Jailbreak，等加载，这个时候不要√Cydia，需要√先Downgrade from iPad Baseband，下一步，进入DUF模式，等待。 开机后，打开Redsn0w，点Extras——Select IPSW——选择IOS6.0，跳出来的窗口点Yes，还是点第一个选项——Just Boot，进入DUF模式。 开机后看看自已的基带是不是05.13.04，之后点打开Cydia，搜索p0sixspwn安裝。 安装好后重启就完美越狱了。 解锁，打开Cydia后搜索安裝Ultrasn0w，解锁完后重启信号就来了。</description></item><item><title>解决 Wordpress 域名隐藏 index.php 后子目录无法访问</title><link>https://xingxiang.me/blog/602/</link><pubDate>Mon, 06 Oct 2014 23:26:27 +0000</pubDate><guid>https://xingxiang.me/blog/602/</guid><description>以 Apache 为例，只需在 .htaccess 文件中添加一个规则，比如我有一个images目录，需要添加以下规则
+RewriteRule /images/(.*) /images/$1 [L]</description></item><item><title>iMac 21.5 late 2012 换SSD过程分享</title><link>https://xingxiang.me/blog/518/</link><pubDate>Wed, 30 Jul 2014 15:04:03 +0000</pubDate><guid>https://xingxiang.me/blog/518/</guid><description>1.把你的SSD插进USB移动硬盘盒里面，插上电脑。
+2.开机时长按option进入Recovery系统，打开磁盘工具，选择Macintosh HD，按恢复，在右边把你的SSD拖到目标磁盘处，按开始，等吧。
+3.拆开iMac的屏幕。
+4.拆开之后就是这个样子，注意屏幕后面有两条线，小心拔下来
+5.拿下4颗螺丝，去下HDD，换上你买的SSD
+6.把屏幕装上就好了</description></item><item><title>在电脑上，iOS 设备上制作 .deb 插件汉化包</title><link>https://xingxiang.me/blog/465/</link><pubDate>Mon, 22 Jul 2013 06:28:44 +0000</pubDate><guid>https://xingxiang.me/blog/465/</guid><description>1.如何汉化插件？ 请看我的第 1 篇教程： https://xingxiang.me/blog/466/
+2.认识什么是.deb 请看我的第 2 篇教程：https://xingxiang.me/blog/463/ （建议看完此文，再看本文）
+准备工作： 电脑上：必须使用linux系统（mac上需要安装 fink 或者 macport ） fink安装请参考此贴：http://bbs.weiphone.com/read-htm-tid-5596730.html
+iOS 上： 必须 越狱 且安装 MobileTerminal
+.strings文件模板：点击下载
+教程开始：
+电脑上：(我的系统是mac os x，且已安装fink) 1.创建需要 同 放置汉化.strings路径一样 的 文件夹 （看完我的第一篇教程：https://xingxiang.me/blog/466/）
+现在我正在制作 DietBulletin汉化包 ，汉化.strings 需要放到 /Library/PreferenceLoader/Preferences/zh_CN.lproj 里。。看图
+2.创建DEBIAN文件夹（在此deb文件夹的根目录）并在里面创建 control 文件
+（看我的第二篇教程：https://xingxiang.me/blog/463/）
+打开终端，获取su权限 输入命令 看图 回车
+至此一个deb汉化包已完成，放到ifile安装就行了。
+ios设备上： 1.把你刚刚的创建的文件夹放到：/var/mobile 里
+2.打开MobileTerminal，获取su权限
+输入命令，回车。。看图 （跟电脑上一样的） 4.ifile：deb包已经生成</description></item><item><title>Ubuntu 上制作 .deb 详细图文教程</title><link>https://xingxiang.me/blog/463/</link><pubDate>Fri, 31 May 2013 06:27:17 +0000</pubDate><guid>https://xingxiang.me/blog/463/</guid><description>如何汉化插件？ 请看我的第一篇教程： https://xingxiang.me/blog/466/
+首先认识一下什么是.deb deb 是 Unix 系统(其实主要是 Linux )下的安装包，基于 tar 包，因此本身会记录文件的权限(读/写/可执行)以及所有者/用户组。
+由于 Unix 类系统对权限、所有者、组的严格要求，而 deb 格式安装包又经常会涉及到系统比较底层的操作，所以权限等的设置尤其重要。
+deb 包本身有三部分组成： 1.数据包，包含实际安装的程序数据，文件名为 data.tar.XXX；
+2.安装信息及控制脚本包，包含 deb 的安装说明，标识，脚本等，文件名为 control.tar.gz；
+3.最后一个是 deb 文件的一些二进制数据，包括文件头等信息，一般看不到，在某些软件中打开可以看到。
+deb 本身可以使用不同的压缩方式。tar 格式并不是一种压缩格式，而是直接把分散的文件和目录集合在一起，并记录其权限等数据信息。之前提到过的 data.tar.XXX，这里 XXX 就是经过压缩后的后缀名。deb 默认使用的压缩格式为 gzip 格式，所以最常见的就是 data.tar.gz。常有的压缩格式还有 bzip2 和 lzma，其中 lzma 压缩率最高，但压缩需要的 CPU 资源和时间都比较长。
+data.tar.gz包含的是实际安装的程序数据，而在安装过程中，该包里的数据会被直接解压到根目录(即 / )，因此在打包之前需要根据文件所在位置设置好相应的文件/目录树。
+而 control.tar.gz 则包含了一个 deb 安装的时候所需要的控制信息。一般有 5 个文件：
+control，用了记录软件标识，版本号，平台，依赖信息等数据；
+preinst，在解包 data.tar.gz 前运行的脚本；
+postinst，在解包数据后运行的脚本；
+prerm，卸载时，在删除文件之前运行的脚本；
+postrm，在删除文件之后运行的脚本；
+在 Cydia 系统中，Cydia 的作者 Saurik 另外添加了一个脚本，extrainst_，作用与 postinst 类似。</description></item><item><title>【Cydia 插件汉化教程】 两种方法图文视频详细教程</title><link>https://xingxiang.me/blog/466/</link><pubDate>Sat, 02 Mar 2013 06:29:14 +0000</pubDate><guid>https://xingxiang.me/blog/466/</guid><description>转载请标明出处：https://xingxiang.me/blog/466
+请大家支持正版，使用正版软件，插件
+deb制作教程：https://xingxiang.me/blog/463/
+在ios上的制作方法 ：https://xingxiang.me/blog/465/
+总共有两个方法，废话不多说，开始…… * 插件常放置文件的目录（也可以到Cydia里查看目录） //Library/PreferenceBundles
+//Library/PreferenceLoader/Preferences
+//Library/MobileSubstrate/DynamicLibrarie
+//System/Library/PreferenceBundles
+//Library/Weeloader
+//System/Library/WeeAppPlugins
+一般所有的插件都能在其中一个目录里进行汉化 ，大家可以像我一样在iFile创建一个收藏夹…
+方法一： （优点: 较方便。缺点：更新插件会丢失汉化，有的菜单二级目录无法汉化。so 不推荐）
+已Zephyr为例： 首先看到的界面当然是英文的 然后打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录） 找到Zephyr.plist 点击，选择使用文本编辑器打开 然后我们先汉化第一个 文本 ：Enabled 点击搜索，输入Enabled
+然后选择这个单词 注意：旁边的标点别乱删 改成 开关 保存
+杀掉设置后台
+10.回到设置里一看
+Finally 成功了!!!!!!
+但是在此不推荐第一种，因为一些多二级菜单的插件汉化不彻底，而且容易丢失。
+方法一 视频演示： 【简版 v2.0】youku链接：http://v.youku.com/v_show/id_XNTMwODYxNTY4.html
+【详细有声版 v2.0】youku: http://v.youku.com/v_show/id_XNTMxMDYwNzk2.html
+第二种方法： （极为推荐，I prefer this）
+废话不多说，还是以Zephyr为例…… 打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录） 在此目录创建语言包 简体：zh_CN.lproj
+繁体：zh_TW.lproj
+3. 找到Zephyr.plist 然后在zh_CN.lproj里创建 Zephyr.strings （文件名与你想修改的plist相同） 一定要 选 常规文件
+点击这个strings 选择属性表编辑器，打开是空白的
+点击+ 直接输入你在设置里看到的文字，注意大小写</description></item></channel></rss>

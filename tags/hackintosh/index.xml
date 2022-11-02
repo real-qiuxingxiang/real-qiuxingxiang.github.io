@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hackintosh on Q's Blog</title><link>https://xingxiang.me/tags/hackintosh/</link><description>Recent content in Hackintosh on Q's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 27 Feb 2020 06:53:21 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/hackintosh/index.xml" rel="self" type="application/rss+xml"/><item><title>Dell XPS 15 9550 黑苹果 macOS Catalina 双系统 不用 U 盘</title><link>https://xingxiang.me/blog/1021/</link><pubDate>Thu, 27 Feb 2020 06:53:21 +0000</pubDate><guid>https://xingxiang.me/blog/1021/</guid><description>因为疫情原因，在家闲的慌，想折腾一下 Hackintosh，但是手头上没有 U 盘，就想看看能不能不用 U 盘安装黑苹果。
+其实完全是可以的，参见：macOS Catalina 10.15.6(17G73)恢复版系统镜像包
+这个方法类似以前的 ghost 镜像，恢复硬盘，安装完后建议新建一个用户，把原来的用户删除。
+最重要的还是 EFI 分区的配置，上面的镜像是通用的，Clover 则是根据每一部机器定制的。
+XPS 9550 的 Clover： https://github.com/xxxzc/xps15-9550-macos （我根据这个修改）
+https://github.com/krim404/DellXPS15-9550-OSX</description></item></channel></rss>
