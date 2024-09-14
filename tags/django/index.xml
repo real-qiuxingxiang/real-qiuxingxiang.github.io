@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on Q's Blog</title><link>https://xingxiang.me/tags/django/</link><description>Recent content in Django on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 22 Aug 2018 07:50:40 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>基于Django 开发的博客系统</title><link>https://xingxiang.me/blog/975/</link><pubDate>Wed, 22 Aug 2018 07:50:40 +0000</pubDate><guid>https://xingxiang.me/blog/975/</guid><description>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on Q's Blog</title><link>https://998225.xyz/tags/django/</link><description>Recent content in Django on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 22 Aug 2018 07:50:40 +0000</lastBuildDate><atom:link href="https://998225.xyz/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>基于Django 开发的博客系统</title><link>https://998225.xyz/blog/975/</link><pubDate>Wed, 22 Aug 2018 07:50:40 +0000</pubDate><guid>https://998225.xyz/blog/975/</guid><description>&lt;ul>
 &lt;li>Python 3.6.6 和 Django 2.1.5&lt;/li>
 &lt;li>MySQL&lt;/li>
 &lt;li>&lt;a href="https://github.com/sshwsfc/xadmin">xadmin&lt;/a> 后台管理&lt;/li>
@@ -42,4 +42,4 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python manage.py collectstatic
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py compress
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="首页">首页&lt;/h3>
-&lt;p>&lt;img src="https://xingxiang.me/images/github_pic/index.png" alt="index" title="">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://998225.xyz/images/github_pic/index.png" alt="index" title="">&lt;/p></description></item></channel></rss>

@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>树莓派 on Q's Blog</title><link>https://xingxiang.me/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link><description>Recent content in 树莓派 on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Jan 2017 10:07:22 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>树莓派3 + LCD1602 硬件连接 代码</title><link>https://xingxiang.me/blog/843/</link><pubDate>Sun, 01 Jan 2017 10:07:22 +0000</pubDate><guid>https://xingxiang.me/blog/843/</guid><description>&lt;h2 id="lcd-1602figure-classwp-block-image">LCD 1602&lt;!-- raw HTML omitted -->&lt;/h2>
-&lt;p>&lt;img src="https://xingxiang.me/images/LCD_1602.jpg" alt="LCD 1602">&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>树莓派 on Q's Blog</title><link>https://998225.xyz/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link><description>Recent content in 树莓派 on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Jan 2017 10:07:22 +0000</lastBuildDate><atom:link href="https://998225.xyz/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>树莓派3 + LCD1602 硬件连接 代码</title><link>https://998225.xyz/blog/843/</link><pubDate>Sun, 01 Jan 2017 10:07:22 +0000</pubDate><guid>https://998225.xyz/blog/843/</guid><description>&lt;h2 id="lcd-1602figure-classwp-block-image">LCD 1602&lt;!-- raw HTML omitted -->&lt;/h2>
+&lt;p>&lt;img src="https://998225.xyz/images/LCD_1602.jpg" alt="LCD 1602">&lt;/p>
 &lt;h2 id="树莓派model-b-pin示意图">树莓派Model B Pin示意图：&lt;/h2>
-&lt;p>&lt;img src="https://xingxiang.me/images/Model_B_Pin.jpg" alt="Model B Pin">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/Model_B_Pin.jpg" alt="Model B Pin">&lt;/p>
 &lt;h2 id="硬件连接从上到下对应lcd1602-1-16号pin">硬件连接（从上到下对应LCD1602 1-16号Pin）&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -81,7 +81,7 @@
 &lt;h2 id="代码">代码&lt;/h2>
 &lt;p>Github ： &lt;a href="https://github.com/lifanxi/rpimenu">https://github.com/lifanxi/rpimenu&lt;/a>&lt;/p>
 &lt;p>解压后有 Adafruit_CharLCD.py 文件，运行此文件在LCD上会显示两行字符：LCD 1602 Test, 123456789ABCDEF。&lt;/p>
-&lt;p>只需要在此文件上进行一下修改就可以自定义显示你想要的内容了（如果不是按上表的GPIO，记住修改）。&lt;/p></description></item><item><title>树莓派3 定时上传CUP温度到 yeelink 代码</title><link>https://xingxiang.me/blog/842/</link><pubDate>Fri, 30 Dec 2016 13:24:03 +0000</pubDate><guid>https://xingxiang.me/blog/842/</guid><description>&lt;p>CPUtemperature.py 代码&lt;/p>
+&lt;p>只需要在此文件上进行一下修改就可以自定义显示你想要的内容了（如果不是按上表的GPIO，记住修改）。&lt;/p></description></item><item><title>树莓派3 定时上传CUP温度到 yeelink 代码</title><link>https://998225.xyz/blog/842/</link><pubDate>Fri, 30 Dec 2016 13:24:03 +0000</pubDate><guid>https://998225.xyz/blog/842/</guid><description>&lt;p>CPUtemperature.py 代码&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests 
@@ -108,7 +108,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo crontab -e
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>加入&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>*/5 * * * * /home/pi/yeelink.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>树莓派3 + DHT11 温湿度传感器 + 定时上传 yeelink 代码 + 数据过滤</title><link>https://xingxiang.me/blog/840/</link><pubDate>Fri, 30 Dec 2016 01:19:44 +0000</pubDate><guid>https://xingxiang.me/blog/840/</guid><description>&lt;p>DHT11.py 代码&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>树莓派3 + DHT11 温湿度传感器 + 定时上传 yeelink 代码 + 数据过滤</title><link>https://998225.xyz/blog/840/</link><pubDate>Fri, 30 Dec 2016 01:19:44 +0000</pubDate><guid>https://998225.xyz/blog/840/</guid><description>&lt;p>DHT11.py 代码&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/python&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> RPi.GPIO &lt;span style="color:#66d9ef">as&lt;/span> GPIO
@@ -203,7 +203,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> check &lt;span style="color:#f92672">!=&lt;/span> tmp:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DHT11()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yeelink() 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>DHT11.sh 代码&lt;/p></description></item><item><title>树莓派apt加速 替换apt源为国内镜像</title><link>https://xingxiang.me/blog/838/</link><pubDate>Mon, 26 Dec 2016 06:32:27 +0000</pubDate><guid>https://xingxiang.me/blog/838/</guid><description>&lt;p>因为众所周知的原因，Linux默认的apt源在国内神慢……换吧&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>DHT11.sh 代码&lt;/p></description></item><item><title>树莓派apt加速 替换apt源为国内镜像</title><link>https://998225.xyz/blog/838/</link><pubDate>Mon, 26 Dec 2016 06:32:27 +0000</pubDate><guid>https://998225.xyz/blog/838/</guid><description>&lt;p>因为众所周知的原因，Linux默认的apt源在国内神慢……换吧&lt;/p>
 &lt;p>1.改sources.list&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/apt/sources.list
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>内容全部改为&lt;/p>

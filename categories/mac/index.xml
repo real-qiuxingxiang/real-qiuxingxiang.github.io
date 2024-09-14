@@ -1,27 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Q's Blog</title><link>https://xingxiang.me/categories/mac/</link><description>Recent content in Mac on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 27 Feb 2020 06:53:21 +0000</lastBuildDate><atom:link href="https://xingxiang.me/categories/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dell XPS 15 9550 黑苹果 macOS Catalina 双系统 不用 U 盘</title><link>https://xingxiang.me/blog/1021/</link><pubDate>Thu, 27 Feb 2020 06:53:21 +0000</pubDate><guid>https://xingxiang.me/blog/1021/</guid><description>&lt;p>因为疫情原因，在家闲的慌，想折腾一下 Hackintosh，但是手头上没有 U 盘，就想看看能不能不用 U 盘安装黑苹果。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Q's Blog</title><link>https://998225.xyz/categories/mac/</link><description>Recent content in Mac on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 27 Feb 2020 06:53:21 +0000</lastBuildDate><atom:link href="https://998225.xyz/categories/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dell XPS 15 9550 黑苹果 macOS Catalina 双系统 不用 U 盘</title><link>https://998225.xyz/blog/1021/</link><pubDate>Thu, 27 Feb 2020 06:53:21 +0000</pubDate><guid>https://998225.xyz/blog/1021/</guid><description>&lt;p>因为疫情原因，在家闲的慌，想折腾一下 Hackintosh，但是手头上没有 U 盘，就想看看能不能不用 U 盘安装黑苹果。&lt;/p>
 &lt;p>其实完全是可以的，参见：&lt;a href="http://k61.org/b960947f.html">macOS Catalina 10.15.6(17G73)恢复版系统镜像包&lt;/a>&lt;/p>
 &lt;p>这个方法类似以前的 ghost 镜像，恢复硬盘，安装完后建议新建一个用户，把原来的用户删除。&lt;/p>
 &lt;p>最重要的还是 EFI 分区的配置，上面的镜像是通用的，Clover 则是根据每一部机器定制的。&lt;/p>
 &lt;h2 id="xps-9550-的-clover">XPS 9550 的 Clover：&lt;/h2>
 &lt;p>&lt;a href="https://github.com/xxxzc/xps15-9550-macos">https://github.com/xxxzc/xps15-9550-macos&lt;/a> （我根据这个修改）&lt;/p>
-&lt;p>&lt;a href="https://github.com/krim404/DellXPS15-9550-OSX">https://github.com/krim404/DellXPS15-9550-OSX&lt;/a>&lt;/p></description></item><item><title>关闭/打开 Mac 开机声音</title><link>https://xingxiang.me/blog/760/</link><pubDate>Sat, 17 Oct 2015 14:06:48 +0000</pubDate><guid>https://xingxiang.me/blog/760/</guid><description>&lt;p>关闭声音：&lt;/p>
+&lt;p>&lt;a href="https://github.com/krim404/DellXPS15-9550-OSX">https://github.com/krim404/DellXPS15-9550-OSX&lt;/a>&lt;/p></description></item><item><title>关闭/打开 Mac 开机声音</title><link>https://998225.xyz/blog/760/</link><pubDate>Sat, 17 Oct 2015 14:06:48 +0000</pubDate><guid>https://998225.xyz/blog/760/</guid><description>&lt;p>关闭声音：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nvram StartupMute&lt;span style="color:#f92672">=&lt;/span>%01
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>开启声音：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nvram StartupMute&lt;span style="color:#f92672">=&lt;/span>%00
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>记一次 OS X 用户文件夹损坏修复过程</title><link>https://xingxiang.me/blog/707/</link><pubDate>Sun, 21 Jun 2015 13:02:06 +0000</pubDate><guid>https://xingxiang.me/blog/707/</guid><description>&lt;p>昨天，突然想在Mac上临时搭个FTP服务器，随便下载了一个PureFTPd安装，意外就这样发生了……&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>记一次 OS X 用户文件夹损坏修复过程</title><link>https://998225.xyz/blog/707/</link><pubDate>Sun, 21 Jun 2015 13:02:06 +0000</pubDate><guid>https://998225.xyz/blog/707/</guid><description>&lt;p>昨天，突然想在Mac上临时搭个FTP服务器，随便下载了一个PureFTPd安装，意外就这样发生了……&lt;/p>
 &lt;p>安装完之后，死机了，没办法，只能强制按电源键关机……&lt;/p>
 &lt;p>重新开机，照常输入我的账号和密码登陆，谁知道死活说我密码错误，卧槽……&lt;/p>
 &lt;p>又没办法啊，只能开机按option进入Recovery系统去了，先设置了一下root账号的密码，重新开机登陆root账号，保留原来的用户文件夹，重新创建一个管理员用户，再把原来的用户文件夹链接回去……&lt;/p>
-&lt;p>又折腾了一个小时……&lt;/p></description></item><item><title>解决 iOS 英文语言下通讯录索引排序混乱的问题</title><link>https://xingxiang.me/blog/670/</link><pubDate>Sun, 08 Mar 2015 02:57:27 +0000</pubDate><guid>https://xingxiang.me/blog/670/</guid><description>&lt;p>当系统语言设置为英文时，中文联系人将不再按拼音排序，索引全归为#，如何解决此问题？网络上流传的大多是手动逐个添加的笨办法，在这里我们将介绍一个方便的批量处理方法，迅速解决此问题。&lt;/p>
-&lt;p>下载安装Phonetic Contacts：&lt;a href="https://apps.apple.com/cn/app/phonetic-contacts/id1078961574">https://apps.apple.com/cn/app/phonetic-contacts/id1078961574&lt;/a>&lt;/p></description></item><item><title>iMac 21.5 late 2012 换SSD过程分享</title><link>https://xingxiang.me/blog/518/</link><pubDate>Wed, 30 Jul 2014 15:04:03 +0000</pubDate><guid>https://xingxiang.me/blog/518/</guid><description>&lt;p>1.把你的SSD插进USB移动硬盘盒里面，插上电脑。&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3121.jpg" alt="">&lt;/p>
+&lt;p>又折腾了一个小时……&lt;/p></description></item><item><title>解决 iOS 英文语言下通讯录索引排序混乱的问题</title><link>https://998225.xyz/blog/670/</link><pubDate>Sun, 08 Mar 2015 02:57:27 +0000</pubDate><guid>https://998225.xyz/blog/670/</guid><description>&lt;p>当系统语言设置为英文时，中文联系人将不再按拼音排序，索引全归为#，如何解决此问题？网络上流传的大多是手动逐个添加的笨办法，在这里我们将介绍一个方便的批量处理方法，迅速解决此问题。&lt;/p>
+&lt;p>下载安装Phonetic Contacts：&lt;a href="https://apps.apple.com/cn/app/phonetic-contacts/id1078961574">https://apps.apple.com/cn/app/phonetic-contacts/id1078961574&lt;/a>&lt;/p></description></item><item><title>iMac 21.5 late 2012 换SSD过程分享</title><link>https://998225.xyz/blog/518/</link><pubDate>Wed, 30 Jul 2014 15:04:03 +0000</pubDate><guid>https://998225.xyz/blog/518/</guid><description>&lt;p>1.把你的SSD插进USB移动硬盘盒里面，插上电脑。&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3121.jpg" alt="">&lt;/p>
 &lt;p>2.开机时长按option进入Recovery系统，打开磁盘工具，选择Macintosh HD，按恢复，在右边把你的SSD拖到目标磁盘处，按开始，等吧。&lt;/p>
-&lt;p>&lt;a href="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3123.jpg">&lt;!-- raw HTML omitted -->&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3123.jpg">&lt;!-- raw HTML omitted -->&lt;/a>&lt;/p>
 &lt;p>3.拆开iMac的屏幕。&lt;/p>
 &lt;p>4.拆开之后就是这个样子，注意屏幕后面有两条线，小心拔下来&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3124.jpg" alt="">
-&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3126.jpg" alt="">
-&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3127.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3124.jpg" alt="">
+&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3126.jpg" alt="">
+&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3127.jpg" alt="">&lt;/p>
 &lt;p>5.拿下4颗螺丝，去下HDD，换上你买的SSD&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3129.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3129.jpg" alt="">&lt;/p>
 &lt;p>6.把屏幕装上就好了&lt;/p></description></item></channel></rss>

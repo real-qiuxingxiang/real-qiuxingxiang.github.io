@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Q's Blog</title><link>https://xingxiang.me/</link><description>Recent content on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 21 Apr 2022 07:07:05 +0000</lastBuildDate><atom:link href="https://xingxiang.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Python Excel 和 Json 互转</title><link>https://xingxiang.me/blog/1155/</link><pubDate>Thu, 21 Apr 2022 07:07:05 +0000</pubDate><guid>https://xingxiang.me/blog/1155/</guid><description>&lt;h2 id="一excel-转-json">一、Excel 转 Json&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Q's Blog</title><link>https://998225.xyz/</link><description>Recent content on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 21 Apr 2022 07:07:05 +0000</lastBuildDate><atom:link href="https://998225.xyz/index.xml" rel="self" type="application/rss+xml"/><item><title>Python Excel 和 Json 互转</title><link>https://998225.xyz/blog/1155/</link><pubDate>Thu, 21 Apr 2022 07:07:05 +0000</pubDate><guid>https://998225.xyz/blog/1155/</guid><description>&lt;h2 id="一excel-转-json">一、Excel 转 Json&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pandas
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pandas&lt;span style="color:#f92672">.&lt;/span>read_excel(&lt;span style="color:#e6db74">&amp;#34;Data.xlsx&amp;#34;&lt;/span>, sheet_name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>to_json(&lt;span style="color:#e6db74">&amp;#34;1.json&amp;#34;&lt;/span>, orient&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;records&amp;#34;&lt;/span>, force_ascii&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">False&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="二json-转-excel">二、Json 转 Excel&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pandas
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pandas&lt;span style="color:#f92672">.&lt;/span>read_json(&lt;span style="color:#e6db74">&amp;#34;input.json&amp;#34;&lt;/span>,dtype&lt;span style="color:#f92672">=&lt;/span>str)&lt;span style="color:#f92672">.&lt;/span>to_excel(&lt;span style="color:#e6db74">&amp;#34;output.xlsx&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 批量按文件名关键字新建文件夹并归档文件</title><link>https://xingxiang.me/blog/1149/</link><pubDate>Sun, 27 Mar 2022 03:39:32 +0000</pubDate><guid>https://xingxiang.me/blog/1149/</guid><description>&lt;p>按需求修改规则使用，现在代码的规则对应的文件名为：xxx-xxx-xxx-xxx-xxx-xxx.jpg。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 批量按文件名关键字新建文件夹并归档文件</title><link>https://998225.xyz/blog/1149/</link><pubDate>Sun, 27 Mar 2022 03:39:32 +0000</pubDate><guid>https://998225.xyz/blog/1149/</guid><description>&lt;p>按需求修改规则使用，现在代码的规则对应的文件名为：xxx-xxx-xxx-xxx-xxx-xxx.jpg。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> shutil
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -33,10 +33,10 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">pass&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#39;整理完毕！&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Windows 批量将子目录文件移动到根目录 bat</title><link>https://xingxiang.me/blog/1148/</link><pubDate>Sun, 27 Mar 2022 03:31:00 +0000</pubDate><guid>https://xingxiang.me/blog/1148/</guid><description>&lt;p>放到包含一堆子文件夹的文件根目录运行。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Windows 批量将子目录文件移动到根目录 bat</title><link>https://998225.xyz/blog/1148/</link><pubDate>Sun, 27 Mar 2022 03:31:00 +0000</pubDate><guid>https://998225.xyz/blog/1148/</guid><description>&lt;p>放到包含一堆子文件夹的文件根目录运行。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>@echo off
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> /f &lt;span style="color:#e6db74">&amp;#34;delims=&amp;#34;&lt;/span> %&lt;span style="color:#66d9ef">%&lt;/span>a &lt;span style="color:#66d9ef">in&lt;/span> (&lt;span style="color:#e6db74">&amp;#39;dir /a-d /b /s &amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">do&lt;/span> (move &lt;span style="color:#e6db74">&amp;#34;%%~a&amp;#34;&lt;/span> ./)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 批量分割裁剪图片</title><link>https://xingxiang.me/blog/1147/</link><pubDate>Sun, 27 Mar 2022 03:20:01 +0000</pubDate><guid>https://xingxiang.me/blog/1147/</guid><description>&lt;p>放到图片目录下运行，以下代码为从中间将图片一分为二，请根据自己需要修改。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 批量分割裁剪图片</title><link>https://998225.xyz/blog/1147/</link><pubDate>Sun, 27 Mar 2022 03:20:01 +0000</pubDate><guid>https://998225.xyz/blog/1147/</guid><description>&lt;p>放到图片目录下运行，以下代码为从中间将图片一分为二，请根据自己需要修改。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> PIL &lt;span style="color:#f92672">import&lt;/span> Image
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -63,7 +63,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j &lt;span style="color:#f92672">=&lt;/span> j &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> img2&lt;span style="color:#f92672">.&lt;/span>save(str(j)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#39;.jpg&amp;#39;&lt;/span>, dpi&lt;span style="color:#f92672">=&lt;/span>img2&lt;span style="color:#f92672">.&lt;/span>info[&lt;span style="color:#e6db74">&amp;#34;dpi&amp;#34;&lt;/span>])
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j &lt;span style="color:#f92672">=&lt;/span> j &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 批量旋转图片</title><link>https://xingxiang.me/blog/1145/</link><pubDate>Sun, 27 Mar 2022 03:17:43 +0000</pubDate><guid>https://xingxiang.me/blog/1145/</guid><description>&lt;p>放到图片目录下运行。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 批量旋转图片</title><link>https://998225.xyz/blog/1145/</link><pubDate>Sun, 27 Mar 2022 03:17:43 +0000</pubDate><guid>https://998225.xyz/blog/1145/</guid><description>&lt;p>放到图片目录下运行。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> PIL &lt;span style="color:#f92672">import&lt;/span> Image
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -83,7 +83,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;旋转成功&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;目录下所有图片已经保存到本文件目录下。&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(path))
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>我的足迹</title><link>https://xingxiang.me/myfootprints/</link><pubDate>Wed, 06 Oct 2021 03:14:36 +0000</pubDate><guid>https://xingxiang.me/myfootprints/</guid><description>&lt;h2 id="一去过的城市">一、去过的城市&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>我的足迹</title><link>https://998225.xyz/myfootprints/</link><pubDate>Wed, 06 Oct 2021 03:14:36 +0000</pubDate><guid>https://998225.xyz/myfootprints/</guid><description>&lt;h2 id="一去过的城市">一、去过的城市&lt;/h2>
 &lt;h3 id="中国1">&lt;a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD">中国&lt;/a>&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://zh.wikipedia.org/wiki/%E7%89%B9%E5%88%AB%E8%A1%8C%E6%94%BF%E5%8C%BA">特别行政区&lt;/a>：&lt;a href="https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF">香港&lt;/a>&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->2010&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->、&lt;a href="https://zh.wikipedia.org/wiki/%E6%BE%B3%E9%96%80">澳门&lt;/a>&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->2017&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/li>
@@ -130,7 +130,7 @@
 &lt;ul>
 &lt;li>&lt;a href="https://zh.wikipedia.org/wiki/File:Flag_of_Kuala_Lumpur,_Malaysia.svg">&lt;/a>&lt;a href="https://zh.wikipedia.org/wiki/%E5%90%89%E9%9A%86%E5%9D%A1">吉隆坡&lt;/a>：&lt;a href="https://zh.wikipedia.org/wiki/%E5%90%89%E9%9A%86%E5%9D%A1%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA">吉隆坡国际机场&lt;/a>&lt;!-- raw HTML omitted -->2&lt;!-- raw HTML omitted -->&lt;/li>
 &lt;/ul>
-&lt;p>&lt;!-- raw HTML omitted -->斜体为经停&lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>nginx SNI 配置</title><link>https://xingxiang.me/blog/1095/</link><pubDate>Mon, 19 Apr 2021 09:36:01 +0000</pubDate><guid>https://xingxiang.me/blog/1095/</guid><description>&lt;p>Server Name Indication (SNI) ，也被称为&lt;!-- raw HTML omitted -->TLS 服务器名称指示&lt;!-- raw HTML omitted -->。&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->斜体为经停&lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>nginx SNI 配置</title><link>https://998225.xyz/blog/1095/</link><pubDate>Mon, 19 Apr 2021 09:36:01 +0000</pubDate><guid>https://998225.xyz/blog/1095/</guid><description>&lt;p>Server Name Indication (SNI) ，也被称为&lt;!-- raw HTML omitted -->TLS 服务器名称指示&lt;!-- raw HTML omitted -->。&lt;/p>
 &lt;p>本配置基于CentOS 8，且仅仅开启nginx的SNI功能。&lt;/p>
 &lt;h3 id="1新建用户">1.新建用户&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>useradd -r -d /var/cache/nginx/ -s /sbin/nologin -U nginx
@@ -207,34 +207,34 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="6-启动nginx">6. 启动nginx&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl start nginx
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>香港科技大学雅思电子送分 雅思电子成绩单</title><link>https://xingxiang.me/blog/1047/</link><pubDate>Thu, 23 Apr 2020 02:22:57 +0000</pubDate><guid>https://xingxiang.me/blog/1047/</guid><description>&lt;p>拿到conditional offer之后，就要寄送材料来获得正式offer。&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/hkust-ielts/hkust-ielts.png" alt="hkust-ielts">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>香港科技大学雅思电子送分 雅思电子成绩单</title><link>https://998225.xyz/blog/1047/</link><pubDate>Thu, 23 Apr 2020 02:22:57 +0000</pubDate><guid>https://998225.xyz/blog/1047/</guid><description>&lt;p>拿到conditional offer之后，就要寄送材料来获得正式offer。&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/hkust-ielts/hkust-ielts.png" alt="hkust-ielts">&lt;/p>
 &lt;p>其中雅思成绩HKUST推荐寄送电子成绩单：&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/hkust-ielts/hkust-ielts-2-1.png" alt="hkust-ielts">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/hkust-ielts/hkust-ielts-2-1.png" alt="hkust-ielts">&lt;/p>
 &lt;p>如果你在中国大陆考的雅思，登录&lt;a href="https://ielts.neea.edu.cn/">https://ielts.neea.edu.cn/&lt;/a>，在额外成绩单寄送页面，选择你想额外寄送的考试，档案号填申请号，其他如图填写：&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/hkust-ielts/hkust-ielts-3-1.png" alt="hkust-ielts">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/hkust-ielts/hkust-ielts-3-1.png" alt="hkust-ielts">&lt;/p>
 &lt;p>大约一个月后，即可在申请官网查看到寄送状态：&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/hkust-ielts/hkust-ielts-4-1.png" alt="hkust-ielts">&lt;/p></description></item><item><title>英文维基百科申请IP封禁豁免权限 IPBE</title><link>https://xingxiang.me/blog/1044/</link><pubDate>Wed, 08 Apr 2020 01:24:12 +0000</pubDate><guid>https://xingxiang.me/blog/1044/</guid><description>&lt;p>对于处在中国大陆的维基人，因众所周知的原因，需要使用代理访问维基百科，但英文维基百科会封禁一部分代理 IP 。&lt;/p>
-&lt;p>这个时候就需要申请 IPBE 权限：&lt;a href="https://en.wikipedia.org/wiki/Wikipedia:IP_block_exemption">Wikipedia:IP block exemption&lt;/a>&lt;/p></description></item><item><title>Dell XPS 15 9550 黑苹果 macOS Catalina 双系统 不用 U 盘</title><link>https://xingxiang.me/blog/1021/</link><pubDate>Thu, 27 Feb 2020 06:53:21 +0000</pubDate><guid>https://xingxiang.me/blog/1021/</guid><description>&lt;p>因为疫情原因，在家闲的慌，想折腾一下 Hackintosh，但是手头上没有 U 盘，就想看看能不能不用 U 盘安装黑苹果。&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/hkust-ielts/hkust-ielts-4-1.png" alt="hkust-ielts">&lt;/p></description></item><item><title>英文维基百科申请IP封禁豁免权限 IPBE</title><link>https://998225.xyz/blog/1044/</link><pubDate>Wed, 08 Apr 2020 01:24:12 +0000</pubDate><guid>https://998225.xyz/blog/1044/</guid><description>&lt;p>对于处在中国大陆的维基人，因众所周知的原因，需要使用代理访问维基百科，但英文维基百科会封禁一部分代理 IP 。&lt;/p>
+&lt;p>这个时候就需要申请 IPBE 权限：&lt;a href="https://en.wikipedia.org/wiki/Wikipedia:IP_block_exemption">Wikipedia:IP block exemption&lt;/a>&lt;/p></description></item><item><title>Dell XPS 15 9550 黑苹果 macOS Catalina 双系统 不用 U 盘</title><link>https://998225.xyz/blog/1021/</link><pubDate>Thu, 27 Feb 2020 06:53:21 +0000</pubDate><guid>https://998225.xyz/blog/1021/</guid><description>&lt;p>因为疫情原因，在家闲的慌，想折腾一下 Hackintosh，但是手头上没有 U 盘，就想看看能不能不用 U 盘安装黑苹果。&lt;/p>
 &lt;p>其实完全是可以的，参见：&lt;a href="http://k61.org/b960947f.html">macOS Catalina 10.15.6(17G73)恢复版系统镜像包&lt;/a>&lt;/p>
 &lt;p>这个方法类似以前的 ghost 镜像，恢复硬盘，安装完后建议新建一个用户，把原来的用户删除。&lt;/p>
 &lt;p>最重要的还是 EFI 分区的配置，上面的镜像是通用的，Clover 则是根据每一部机器定制的。&lt;/p>
 &lt;h2 id="xps-9550-的-clover">XPS 9550 的 Clover：&lt;/h2>
 &lt;p>&lt;a href="https://github.com/xxxzc/xps15-9550-macos">https://github.com/xxxzc/xps15-9550-macos&lt;/a> （我根据这个修改）&lt;/p>
-&lt;p>&lt;a href="https://github.com/krim404/DellXPS15-9550-OSX">https://github.com/krim404/DellXPS15-9550-OSX&lt;/a>&lt;/p></description></item><item><title>Windows 批处理文件 .bat 一键修改 DNS</title><link>https://xingxiang.me/blog/908/</link><pubDate>Sat, 28 Dec 2019 13:00:19 +0000</pubDate><guid>https://xingxiang.me/blog/908/</guid><description>&lt;p>创建文件 dns.bat&lt;/p>
+&lt;p>&lt;a href="https://github.com/krim404/DellXPS15-9550-OSX">https://github.com/krim404/DellXPS15-9550-OSX&lt;/a>&lt;/p></description></item><item><title>Windows 批处理文件 .bat 一键修改 DNS</title><link>https://998225.xyz/blog/908/</link><pubDate>Sat, 28 Dec 2019 13:00:19 +0000</pubDate><guid>https://998225.xyz/blog/908/</guid><description>&lt;p>创建文件 dns.bat&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>@echo off
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chcp &lt;span style="color:#ae81ff">65001&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netsh interface ip set dnsservers &lt;span style="color:#e6db74">&amp;#34;以太网&amp;#34;&lt;/span> static 114.114.114.114 primary
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netsh interface ip add dnsservers &lt;span style="color:#e6db74">&amp;#34;以太网&amp;#34;&lt;/span> 8.8.8.8 index&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ipconfig /flushdns
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>右键-以管理员身份运行即可，以太网改为你的网络名称&lt;/p></description></item><item><title>Twitter 取消所有喜欢</title><link>https://xingxiang.me/blog/991/</link><pubDate>Mon, 25 Nov 2019 09:35:15 +0000</pubDate><guid>https://xingxiang.me/blog/991/</guid><description>&lt;p>用 Chrome 打开 Twitter 网页版 Like 页面，在 Console 运行以下脚本，等待便可：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>右键-以管理员身份运行即可，以太网改为你的网络名称&lt;/p></description></item><item><title>Twitter 取消所有喜欢</title><link>https://998225.xyz/blog/991/</link><pubDate>Mon, 25 Nov 2019 09:35:15 +0000</pubDate><guid>https://998225.xyz/blog/991/</guid><description>&lt;p>用 Chrome 打开 Twitter 网页版 Like 页面，在 Console 运行以下脚本，等待便可：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">setInterval&lt;/span>(() =&amp;gt; {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">d&lt;/span> &lt;span style="color:#66d9ef">of&lt;/span> document.&lt;span style="color:#a6e22e">querySelectorAll&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;div[data-testid=&amp;#34;unlike&amp;#34;]&amp;#39;&lt;/span>)) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">click&lt;/span>()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window.&lt;span style="color:#a6e22e">scrollTo&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>, document.&lt;span style="color:#a6e22e">body&lt;/span>.&lt;span style="color:#a6e22e">scrollHeight&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}, &lt;span style="color:#ae81ff">1000&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>基于Django 开发的博客系统</title><link>https://xingxiang.me/blog/975/</link><pubDate>Wed, 22 Aug 2018 07:50:40 +0000</pubDate><guid>https://xingxiang.me/blog/975/</guid><description>&lt;ul>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>基于Django 开发的博客系统</title><link>https://998225.xyz/blog/975/</link><pubDate>Wed, 22 Aug 2018 07:50:40 +0000</pubDate><guid>https://998225.xyz/blog/975/</guid><description>&lt;ul>
 &lt;li>Python 3.6.6 和 Django 2.1.5&lt;/li>
 &lt;li>MySQL&lt;/li>
 &lt;li>&lt;a href="https://github.com/sshwsfc/xadmin">xadmin&lt;/a> 后台管理&lt;/li>
@@ -278,8 +278,8 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python manage.py collectstatic
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py compress
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="首页">首页&lt;/h3>
-&lt;p>&lt;img src="https://xingxiang.me/images/github_pic/index.png" alt="index" title="">&lt;/p></description></item><item><title>Python 3.7 + BeautifulSoup 4 ：豆瓣 Top 250 爬虫</title><link>https://xingxiang.me/blog/966/</link><pubDate>Thu, 26 Jul 2018 13:22:46 +0000</pubDate><guid>https://xingxiang.me/blog/966/</guid><description>&lt;p>输出 .csv 文件，如图：&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/douban_top250.png" alt="douban_top250">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/github_pic/index.png" alt="index" title="">&lt;/p></description></item><item><title>Python 3.7 + BeautifulSoup 4 ：豆瓣 Top 250 爬虫</title><link>https://998225.xyz/blog/966/</link><pubDate>Thu, 26 Jul 2018 13:22:46 +0000</pubDate><guid>https://998225.xyz/blog/966/</guid><description>&lt;p>输出 .csv 文件，如图：&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/douban_top250.png" alt="douban_top250">&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> csv
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> random
@@ -346,7 +346,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> html &lt;span style="color:#f92672">=&lt;/span> get_html(url)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> get_data(html, i&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data_output(result, &lt;span style="color:#e6db74">&amp;#39;top250.csv&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 3.7 + BeautifulSoup 4 + Scrapy ：简单爬虫实例</title><link>https://xingxiang.me/blog/962/</link><pubDate>Thu, 26 Jul 2018 13:15:47 +0000</pubDate><guid>https://xingxiang.me/blog/962/</guid><description>&lt;p>放假无聊，无聊写个爬虫，把本博客的文章列表页面（https://xingxiang.me/blog）扒下来&lt;/p></description></item><item><title>PHP + ipsw.me API 简陋的 iOS 固件下载</title><link>https://xingxiang.me/blog/942/</link><pubDate>Mon, 09 Apr 2018 12:02:09 +0000</pubDate><guid>https://xingxiang.me/blog/942/</guid><description>&lt;ul>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python 3.7 + BeautifulSoup 4 + Scrapy ：简单爬虫实例</title><link>https://998225.xyz/blog/962/</link><pubDate>Thu, 26 Jul 2018 13:15:47 +0000</pubDate><guid>https://998225.xyz/blog/962/</guid><description>&lt;p>放假无聊，无聊写个爬虫，把本博客的文章列表页面（https://xingxiang.me/blog）扒下来&lt;/p></description></item><item><title>PHP + ipsw.me API 简陋的 iOS 固件下载</title><link>https://998225.xyz/blog/942/</link><pubDate>Mon, 09 Apr 2018 12:02:09 +0000</pubDate><guid>https://998225.xyz/blog/942/</guid><description>&lt;ul>
 &lt;li>无聊写了一个 iOS 固件下载页面 &lt;a href="https://xingxiang.me/ipsw">https://xingxiang.me/ipsw&lt;/a>&lt;/li>
 &lt;li>用了 ipsw.me 的 API&lt;/li>
 &lt;/ul>
@@ -487,10 +487,10 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">?&amp;gt;
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">		&amp;lt;/p&amp;gt;
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>WordPress 需要访问您网页服务器的权限，需输入 FTP 的解决办法</title><link>https://xingxiang.me/blog/927/</link><pubDate>Fri, 02 Mar 2018 09:01:24 +0000</pubDate><guid>https://xingxiang.me/blog/927/</guid><description>&lt;p>导致这个问题的根本原因还是文件夹权限的问题，而且不是访问、读取、写入这类的 777 权限，而是所属用户的用户权限，既然如此我们修改用户权限就可以解决了。&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>WordPress 需要访问您网页服务器的权限，需输入 FTP 的解决办法</title><link>https://998225.xyz/blog/927/</link><pubDate>Fri, 02 Mar 2018 09:01:24 +0000</pubDate><guid>https://998225.xyz/blog/927/</guid><description>&lt;p>导致这个问题的根本原因还是文件夹权限的问题，而且不是访问、读取、写入这类的 777 权限，而是所属用户的用户权限，既然如此我们修改用户权限就可以解决了。&lt;/p>
 &lt;p>LAMP 环境下解决方法：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chown -R apache /data/www/xxx.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH 免 IP 用户名 连接</title><link>https://xingxiang.me/blog/925/</link><pubDate>Mon, 26 Feb 2018 13:32:08 +0000</pubDate><guid>https://xingxiang.me/blog/925/</guid><description>&lt;p>配置服务器别名，使用别名代替 IP。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH 免 IP 用户名 连接</title><link>https://998225.xyz/blog/925/</link><pubDate>Mon, 26 Feb 2018 13:32:08 +0000</pubDate><guid>https://998225.xyz/blog/925/</guid><description>&lt;p>配置服务器别名，使用别名代替 IP。&lt;/p>
 &lt;p>打开或新建 ~/.ssh/config 文件，输入以下内容：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Host server-alias &lt;span style="color:#75715e"># server-alias为SSH链接的服务器别名，随便改自己的&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName server-ip &lt;span style="color:#75715e"># 服务器 IP&lt;/span>
@@ -500,7 +500,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile ~/.ssh/id_rsa &lt;span style="color:#75715e"># 私钥，默认为 ~/.ssh/id_rsa&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>以后就可以通过以下命令连接 SSH&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh server-alias
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH 免密码登录 ssh-copy-id 命令</title><link>https://xingxiang.me/blog/923/</link><pubDate>Thu, 22 Feb 2018 13:19:33 +0000</pubDate><guid>https://xingxiang.me/blog/923/</guid><description>&lt;p>如果你管理一台 Linux Server，那么你就会知道每次 SSH 登录时或者使用 scp 复制文件时都要输入密码是一个多么繁琐的过程，免密码登陆其实很简单。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH 免密码登录 ssh-copy-id 命令</title><link>https://998225.xyz/blog/923/</link><pubDate>Thu, 22 Feb 2018 13:19:33 +0000</pubDate><guid>https://998225.xyz/blog/923/</guid><description>&lt;p>如果你管理一台 Linux Server，那么你就会知道每次 SSH 登录时或者使用 scp 复制文件时都要输入密码是一个多么繁琐的过程，免密码登陆其实很简单。&lt;/p>
 &lt;p>SSH无密码登录的设置步骤：&lt;/p>
 &lt;h2 id="1本地-linux-生成-ssh-密钥和-ssh-公钥">1.本地 Linux 生成 SSH 密钥和 SSH 公钥&lt;/h2>
 &lt;p>首先我们在自己的 Linux 系统上生成一对 SSH Key：SSH密钥和SSH公钥。密钥保存在自己的Linux系统上。&lt;/p>
@@ -533,7 +533,7 @@ SSH公钥保存在.ssh/id_rsa.pub文件中．&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| .++o |
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-----------------+
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="２将-ssh-公钥上传到linux服务器">２将 SSH 公钥上传到Linux服务器&lt;/h2>
-&lt;p>可以使用ssh-copy-id命令来完成。&lt;/p></description></item><item><title>CentOS: 增加/调整 Swap 大小</title><link>https://xingxiang.me/blog/922/</link><pubDate>Thu, 22 Feb 2018 12:23:43 +0000</pubDate><guid>https://xingxiang.me/blog/922/</guid><description>&lt;p>第一步：关闭 Swap&lt;/p>
+&lt;p>可以使用ssh-copy-id命令来完成。&lt;/p></description></item><item><title>CentOS: 增加/调整 Swap 大小</title><link>https://998225.xyz/blog/922/</link><pubDate>Thu, 22 Feb 2018 12:23:43 +0000</pubDate><guid>https://998225.xyz/blog/922/</guid><description>&lt;p>第一步：关闭 Swap&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo swapoff -a
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>第二步：把当前的 Swap 文件增大&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero of&lt;span style="color:#f92672">=&lt;/span>/swapfile bs&lt;span style="color:#f92672">=&lt;/span>1M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1024&lt;/span>
@@ -547,7 +547,7 @@ count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/fstab
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>第六步：再vim里，加上以下命令。然后保存。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/swapfile swap swap defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C语言 动态创建链表 Linked List</title><link>https://xingxiang.me/blog/914/</link><pubDate>Thu, 28 Dec 2017 05:46:56 +0000</pubDate><guid>https://xingxiang.me/blog/914/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C语言 动态创建链表 Linked List</title><link>https://998225.xyz/blog/914/</link><pubDate>Thu, 28 Dec 2017 05:46:56 +0000</pubDate><guid>https://998225.xyz/blog/914/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> LinkedListNode
@@ -594,7 +594,7 @@ count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">outputLink&lt;/span>(head);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>macOS 终端使用代理 Proxy</title><link>https://xingxiang.me/blog/777/</link><pubDate>Sat, 02 Dec 2017 14:18:40 +0000</pubDate><guid>https://xingxiang.me/blog/777/</guid><description>&lt;p>打开终端，运行：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>macOS 终端使用代理 Proxy</title><link>https://998225.xyz/blog/777/</link><pubDate>Sat, 02 Dec 2017 14:18:40 +0000</pubDate><guid>https://998225.xyz/blog/777/</guid><description>&lt;p>打开终端，运行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vim ~/.bash_profile //使用bash
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim ~/.zprofile //使用zsh
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制到 .bash_profile 或 .zprofile ：&lt;/p>
@@ -603,7 +603,7 @@ count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>保存配置，运行：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>source ~/.bash_profile //使用bash
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source ~/.zprofile //使用zsh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>该方法配置好后，在 Jetbrain 等 IDE 的终端下同样有用。&lt;/p></description></item><item><title>C语言 大数加法 减法 乘法</title><link>https://xingxiang.me/blog/902/</link><pubDate>Mon, 27 Nov 2017 14:36:45 +0000</pubDate><guid>https://xingxiang.me/blog/902/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>该方法配置好后，在 Jetbrain 等 IDE 的终端下同样有用。&lt;/p></description></item><item><title>C语言 大数加法 减法 乘法</title><link>https://998225.xyz/blog/902/</link><pubDate>Mon, 27 Nov 2017 14:36:45 +0000</pubDate><guid>https://998225.xyz/blog/902/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;string.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
@@ -850,7 +850,7 @@ count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C语言 扫雷</title><link>https://xingxiang.me/blog/890/</link><pubDate>Mon, 04 Sep 2017 03:44:42 +0000</pubDate><guid>https://xingxiang.me/blog/890/</guid><description>&lt;p>Minesweeper in C&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C语言 扫雷</title><link>https://998225.xyz/blog/890/</link><pubDate>Mon, 04 Sep 2017 03:44:42 +0000</pubDate><guid>https://998225.xyz/blog/890/</guid><description>&lt;p>Minesweeper in C&lt;/p>
 &lt;p>C语言扫雷&lt;/p>
 &lt;p>9*9&lt;/p>
 &lt;p>可以自动消除一大片&lt;/p>
@@ -1025,8 +1025,8 @@ count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码：&lt;a href="https://github.com/real-qiuxingxiang/Minesweeper-C">https://github.com/real-qiuxingxiang/Minesweeper-C&lt;/a>&lt;/p></description></item><item><title>Windows 10 UEFI 引导错误 蓝屏</title><link>https://xingxiang.me/blog/877/</link><pubDate>Tue, 04 Jul 2017 14:58:49 +0000</pubDate><guid>https://xingxiang.me/blog/877/</guid><description>&lt;p>修复如图错误&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/uefi_bluescreen.jpg" alt="uefi_bluescreen">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码：&lt;a href="https://github.com/real-qiuxingxiang/Minesweeper-C">https://github.com/real-qiuxingxiang/Minesweeper-C&lt;/a>&lt;/p></description></item><item><title>Windows 10 UEFI 引导错误 蓝屏</title><link>https://998225.xyz/blog/877/</link><pubDate>Tue, 04 Jul 2017 14:58:49 +0000</pubDate><guid>https://998225.xyz/blog/877/</guid><description>&lt;p>修复如图错误&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/uefi_bluescreen.jpg" alt="uefi_bluescreen">&lt;/p>
 &lt;h2 id="uefi引导基本原理">UEFI引导基本原理&lt;/h2>
 &lt;h3 id="1esp引导分区">1.ESP引导分区&lt;/h3>
 &lt;p>ESP磁盘分区是GPT格式硬盘放EFI引导文件的磁盘，在MBR格式硬盘中也可以由任一fat&lt;br>
@@ -1048,10 +1048,10 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/f uefi 指定启动方式为uefi
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/l zh-cn 指定uefi启动界面语言为简体中文
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>注：64位7PE不带/s参数，故7PE不支持bios启动下修复
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>树莓派3 + LCD1602 硬件连接 代码</title><link>https://xingxiang.me/blog/843/</link><pubDate>Sun, 01 Jan 2017 10:07:22 +0000</pubDate><guid>https://xingxiang.me/blog/843/</guid><description>&lt;h2 id="lcd-1602figure-classwp-block-image">LCD 1602&lt;!-- raw HTML omitted -->&lt;/h2>
-&lt;p>&lt;img src="https://xingxiang.me/images/LCD_1602.jpg" alt="LCD 1602">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>树莓派3 + LCD1602 硬件连接 代码</title><link>https://998225.xyz/blog/843/</link><pubDate>Sun, 01 Jan 2017 10:07:22 +0000</pubDate><guid>https://998225.xyz/blog/843/</guid><description>&lt;h2 id="lcd-1602figure-classwp-block-image">LCD 1602&lt;!-- raw HTML omitted -->&lt;/h2>
+&lt;p>&lt;img src="https://998225.xyz/images/LCD_1602.jpg" alt="LCD 1602">&lt;/p>
 &lt;h2 id="树莓派model-b-pin示意图">树莓派Model B Pin示意图：&lt;/h2>
-&lt;p>&lt;img src="https://xingxiang.me/images/Model_B_Pin.jpg" alt="Model B Pin">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/Model_B_Pin.jpg" alt="Model B Pin">&lt;/p>
 &lt;h2 id="硬件连接从上到下对应lcd1602-1-16号pin">硬件连接（从上到下对应LCD1602 1-16号Pin）&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -1131,7 +1131,7 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;h2 id="代码">代码&lt;/h2>
 &lt;p>Github ： &lt;a href="https://github.com/lifanxi/rpimenu">https://github.com/lifanxi/rpimenu&lt;/a>&lt;/p>
 &lt;p>解压后有 Adafruit_CharLCD.py 文件，运行此文件在LCD上会显示两行字符：LCD 1602 Test, 123456789ABCDEF。&lt;/p>
-&lt;p>只需要在此文件上进行一下修改就可以自定义显示你想要的内容了（如果不是按上表的GPIO，记住修改）。&lt;/p></description></item><item><title>树莓派3 定时上传CUP温度到 yeelink 代码</title><link>https://xingxiang.me/blog/842/</link><pubDate>Fri, 30 Dec 2016 13:24:03 +0000</pubDate><guid>https://xingxiang.me/blog/842/</guid><description>&lt;p>CPUtemperature.py 代码&lt;/p>
+&lt;p>只需要在此文件上进行一下修改就可以自定义显示你想要的内容了（如果不是按上表的GPIO，记住修改）。&lt;/p></description></item><item><title>树莓派3 定时上传CUP温度到 yeelink 代码</title><link>https://998225.xyz/blog/842/</link><pubDate>Fri, 30 Dec 2016 13:24:03 +0000</pubDate><guid>https://998225.xyz/blog/842/</guid><description>&lt;p>CPUtemperature.py 代码&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests 
@@ -1158,7 +1158,7 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo crontab -e
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>加入&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>*/5 * * * * /home/pi/yeelink.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>树莓派3 + DHT11 温湿度传感器 + 定时上传 yeelink 代码 + 数据过滤</title><link>https://xingxiang.me/blog/840/</link><pubDate>Fri, 30 Dec 2016 01:19:44 +0000</pubDate><guid>https://xingxiang.me/blog/840/</guid><description>&lt;p>DHT11.py 代码&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>树莓派3 + DHT11 温湿度传感器 + 定时上传 yeelink 代码 + 数据过滤</title><link>https://998225.xyz/blog/840/</link><pubDate>Fri, 30 Dec 2016 01:19:44 +0000</pubDate><guid>https://998225.xyz/blog/840/</guid><description>&lt;p>DHT11.py 代码&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/python&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> RPi.GPIO &lt;span style="color:#66d9ef">as&lt;/span> GPIO
@@ -1253,7 +1253,7 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> check &lt;span style="color:#f92672">!=&lt;/span> tmp:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DHT11()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yeelink() 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>DHT11.sh 代码&lt;/p></description></item><item><title>树莓派apt加速 替换apt源为国内镜像</title><link>https://xingxiang.me/blog/838/</link><pubDate>Mon, 26 Dec 2016 06:32:27 +0000</pubDate><guid>https://xingxiang.me/blog/838/</guid><description>&lt;p>因为众所周知的原因，Linux默认的apt源在国内神慢……换吧&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>DHT11.sh 代码&lt;/p></description></item><item><title>树莓派apt加速 替换apt源为国内镜像</title><link>https://998225.xyz/blog/838/</link><pubDate>Mon, 26 Dec 2016 06:32:27 +0000</pubDate><guid>https://998225.xyz/blog/838/</guid><description>&lt;p>因为众所周知的原因，Linux默认的apt源在国内神慢……换吧&lt;/p>
 &lt;p>1.改sources.list&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/apt/sources.list
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>内容全部改为&lt;/p>
@@ -1264,20 +1264,20 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>内容全部改为&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deb-src http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="爽快">爽快！&lt;/h2></description></item><item><title>Windows 一键导入 OEM 信息</title><link>https://xingxiang.me/blog/801/</link><pubDate>Mon, 31 Oct 2016 09:12:16 +0000</pubDate><guid>https://xingxiang.me/blog/801/</guid><description>&lt;p>暑假时购入Dell XPS 15 9550，到手后马上重装了了系统，强迫症忍不了有出厂软件的系统，然而重装完之后关于页面的OEM信息没了，不能好好装逼了，逼死强迫症。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="爽快">爽快！&lt;/h2></description></item><item><title>Windows 一键导入 OEM 信息</title><link>https://998225.xyz/blog/801/</link><pubDate>Mon, 31 Oct 2016 09:12:16 +0000</pubDate><guid>https://998225.xyz/blog/801/</guid><description>&lt;p>暑假时购入Dell XPS 15 9550，到手后马上重装了了系统，强迫症忍不了有出厂软件的系统，然而重装完之后关于页面的OEM信息没了，不能好好装逼了，逼死强迫症。&lt;/p>
 &lt;p>在此给大家分享一个工具，导入OEM信息，让大家好好装逼，效果看图吧。&lt;/p>
-&lt;p>下载: &lt;a href="https://xingxiang.me/attachments/%E4%B8%80%E9%94%AE%E5%AF%BC%E5%85%A5__%E5%8D%B8%E8%BD%BDOEM%E4%BF%A1%E6%81%AF.zip">一键导入__卸载OEM信息.zip&lt;/a>&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/OEM.png" alt="OEM">
-&lt;img src="https://xingxiang.me/images/AboutPage.png" alt="AboutPage">&lt;/p></description></item><item><title>关闭/打开 Mac 开机声音</title><link>https://xingxiang.me/blog/760/</link><pubDate>Sat, 17 Oct 2015 14:06:48 +0000</pubDate><guid>https://xingxiang.me/blog/760/</guid><description>&lt;p>关闭声音：&lt;/p>
+&lt;p>下载: &lt;a href="https://998225.xyz/attachments/%E4%B8%80%E9%94%AE%E5%AF%BC%E5%85%A5__%E5%8D%B8%E8%BD%BDOEM%E4%BF%A1%E6%81%AF.zip">一键导入__卸载OEM信息.zip&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/OEM.png" alt="OEM">
+&lt;img src="https://998225.xyz/images/AboutPage.png" alt="AboutPage">&lt;/p></description></item><item><title>关闭/打开 Mac 开机声音</title><link>https://998225.xyz/blog/760/</link><pubDate>Sat, 17 Oct 2015 14:06:48 +0000</pubDate><guid>https://998225.xyz/blog/760/</guid><description>&lt;p>关闭声音：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nvram StartupMute&lt;span style="color:#f92672">=&lt;/span>%01
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>开启声音：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nvram StartupMute&lt;span style="color:#f92672">=&lt;/span>%00
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>记一次 OS X 用户文件夹损坏修复过程</title><link>https://xingxiang.me/blog/707/</link><pubDate>Sun, 21 Jun 2015 13:02:06 +0000</pubDate><guid>https://xingxiang.me/blog/707/</guid><description>&lt;p>昨天，突然想在Mac上临时搭个FTP服务器，随便下载了一个PureFTPd安装，意外就这样发生了……&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>记一次 OS X 用户文件夹损坏修复过程</title><link>https://998225.xyz/blog/707/</link><pubDate>Sun, 21 Jun 2015 13:02:06 +0000</pubDate><guid>https://998225.xyz/blog/707/</guid><description>&lt;p>昨天，突然想在Mac上临时搭个FTP服务器，随便下载了一个PureFTPd安装，意外就这样发生了……&lt;/p>
 &lt;p>安装完之后，死机了，没办法，只能强制按电源键关机……&lt;/p>
 &lt;p>重新开机，照常输入我的账号和密码登陆，谁知道死活说我密码错误，卧槽……&lt;/p>
 &lt;p>又没办法啊，只能开机按option进入Recovery系统去了，先设置了一下root账号的密码，重新开机登陆root账号，保留原来的用户文件夹，重新创建一个管理员用户，再把原来的用户文件夹链接回去……&lt;/p>
-&lt;p>又折腾了一个小时……&lt;/p></description></item><item><title>解决 iOS 英文语言下通讯录索引排序混乱的问题</title><link>https://xingxiang.me/blog/670/</link><pubDate>Sun, 08 Mar 2015 02:57:27 +0000</pubDate><guid>https://xingxiang.me/blog/670/</guid><description>&lt;p>当系统语言设置为英文时，中文联系人将不再按拼音排序，索引全归为#，如何解决此问题？网络上流传的大多是手动逐个添加的笨办法，在这里我们将介绍一个方便的批量处理方法，迅速解决此问题。&lt;/p>
-&lt;p>下载安装Phonetic Contacts：&lt;a href="https://apps.apple.com/cn/app/phonetic-contacts/id1078961574">https://apps.apple.com/cn/app/phonetic-contacts/id1078961574&lt;/a>&lt;/p></description></item><item><title>41周后 iPhone3GS 有锁机6.1.6+完美越狱+解锁来信号</title><link>https://xingxiang.me/blog/611/</link><pubDate>Sun, 02 Nov 2014 03:07:35 +0000</pubDate><guid>https://xingxiang.me/blog/611/</guid><description>&lt;p>折腾好多天，在论坛里试了多种方法，都是越狱后无信号，终于换了个方法，来信号了，步骤：&lt;/p>
+&lt;p>又折腾了一个小时……&lt;/p></description></item><item><title>解决 iOS 英文语言下通讯录索引排序混乱的问题</title><link>https://998225.xyz/blog/670/</link><pubDate>Sun, 08 Mar 2015 02:57:27 +0000</pubDate><guid>https://998225.xyz/blog/670/</guid><description>&lt;p>当系统语言设置为英文时，中文联系人将不再按拼音排序，索引全归为#，如何解决此问题？网络上流传的大多是手动逐个添加的笨办法，在这里我们将介绍一个方便的批量处理方法，迅速解决此问题。&lt;/p>
+&lt;p>下载安装Phonetic Contacts：&lt;a href="https://apps.apple.com/cn/app/phonetic-contacts/id1078961574">https://apps.apple.com/cn/app/phonetic-contacts/id1078961574&lt;/a>&lt;/p></description></item><item><title>41周后 iPhone3GS 有锁机6.1.6+完美越狱+解锁来信号</title><link>https://998225.xyz/blog/611/</link><pubDate>Sun, 02 Nov 2014 03:07:35 +0000</pubDate><guid>https://998225.xyz/blog/611/</guid><description>&lt;p>折腾好多天，在论坛里试了多种方法，都是越狱后无信号，终于换了个方法，来信号了，步骤：&lt;/p>
 &lt;ol>
 &lt;li>前面刷机步骤大致相同，先进入DFU模式，用iTunes恢复iOS 6.1.6的固件，漫长的刷机过程，刷完后激活不了。&lt;/li>
 &lt;li>打开Redsn0w 0.9.15b3，点Extras——Select IPSW——选择iOS6.0固件，跳出来的窗口点”是“，然后Back，点Jailbreak，等待加载，点√Cydia，点√Install iPad Baseband，下一步，进入DUF模式，等待。&lt;/li>
@@ -1288,55 +1288,55 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;li>开机后看看自已的基带是不是05.13.04，之后点打开Cydia，搜索p0sixspwn安裝。&lt;/li>
 &lt;li>安装好后重启就完美越狱了。&lt;/li>
 &lt;li>解锁，打开Cydia后搜索安裝Ultrasn0w，解锁完后重启信号就来了。&lt;/li>
-&lt;/ol></description></item><item><title>解决 Wordpress 域名隐藏 index.php 后子目录无法访问</title><link>https://xingxiang.me/blog/602/</link><pubDate>Mon, 06 Oct 2014 23:26:27 +0000</pubDate><guid>https://xingxiang.me/blog/602/</guid><description>&lt;p>以 Apache 为例，只需在 .htaccess 文件中添加一个规则，比如我有一个images目录，需要添加以下规则&lt;/p>
+&lt;/ol></description></item><item><title>解决 Wordpress 域名隐藏 index.php 后子目录无法访问</title><link>https://998225.xyz/blog/602/</link><pubDate>Mon, 06 Oct 2014 23:26:27 +0000</pubDate><guid>https://998225.xyz/blog/602/</guid><description>&lt;p>以 Apache 为例，只需在 .htaccess 文件中添加一个规则，比如我有一个images目录，需要添加以下规则&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-apache" data-lang="apache">&lt;span style="display:flex;">&lt;span>RewriteRule &lt;span style="color:#e6db74">/images/&lt;/span>(.*) &lt;span style="color:#e6db74">/images/&lt;/span>$1 [L]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>iMac 21.5 late 2012 换SSD过程分享</title><link>https://xingxiang.me/blog/518/</link><pubDate>Wed, 30 Jul 2014 15:04:03 +0000</pubDate><guid>https://xingxiang.me/blog/518/</guid><description>&lt;p>1.把你的SSD插进USB移动硬盘盒里面，插上电脑。&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3121.jpg" alt="">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>iMac 21.5 late 2012 换SSD过程分享</title><link>https://998225.xyz/blog/518/</link><pubDate>Wed, 30 Jul 2014 15:04:03 +0000</pubDate><guid>https://998225.xyz/blog/518/</guid><description>&lt;p>1.把你的SSD插进USB移动硬盘盒里面，插上电脑。&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3121.jpg" alt="">&lt;/p>
 &lt;p>2.开机时长按option进入Recovery系统，打开磁盘工具，选择Macintosh HD，按恢复，在右边把你的SSD拖到目标磁盘处，按开始，等吧。&lt;/p>
-&lt;p>&lt;a href="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3123.jpg">&lt;!-- raw HTML omitted -->&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3123.jpg">&lt;!-- raw HTML omitted -->&lt;/a>&lt;/p>
 &lt;p>3.拆开iMac的屏幕。&lt;/p>
 &lt;p>4.拆开之后就是这个样子，注意屏幕后面有两条线，小心拔下来&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3124.jpg" alt="">
-&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3126.jpg" alt="">
-&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3127.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3124.jpg" alt="">
+&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3126.jpg" alt="">
+&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3127.jpg" alt="">&lt;/p>
 &lt;p>5.拿下4颗螺丝，去下HDD，换上你买的SSD&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/imac-late-2012-diy-ssd/IMG_3129.jpg" alt="">&lt;/p>
-&lt;p>6.把屏幕装上就好了&lt;/p></description></item><item><title>在电脑上，iOS 设备上制作 .deb 插件汉化包</title><link>https://xingxiang.me/blog/465/</link><pubDate>Mon, 22 Jul 2013 06:28:44 +0000</pubDate><guid>https://xingxiang.me/blog/465/</guid><description>&lt;p>1.如何汉化插件？ 请看我的第 1 篇教程： &lt;a href="https://xingxiang.me/blog/466/">https://xingxiang.me/blog/466/&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/imac-late-2012-diy-ssd/IMG_3129.jpg" alt="">&lt;/p>
+&lt;p>6.把屏幕装上就好了&lt;/p></description></item><item><title>在电脑上，iOS 设备上制作 .deb 插件汉化包</title><link>https://998225.xyz/blog/465/</link><pubDate>Mon, 22 Jul 2013 06:28:44 +0000</pubDate><guid>https://998225.xyz/blog/465/</guid><description>&lt;p>1.如何汉化插件？ 请看我的第 1 篇教程： &lt;a href="https://xingxiang.me/blog/466/">https://xingxiang.me/blog/466/&lt;/a>&lt;/p>
 &lt;p>2.认识什么是.deb 请看我的第 2 篇教程：&lt;a href="https://xingxiang.me/blog/463/">https://xingxiang.me/blog/463/&lt;/a> （建议看完此文，再看本文）&lt;/p>
 &lt;h2 id="准备工作">准备工作：&lt;/h2>
 &lt;p>电脑上：必须使用linux系统（mac上需要安装 fink 或者 macport ） fink安装请参考此贴：http://bbs.weiphone.com/read-htm-tid-5596730.html&lt;/p>
 &lt;p>iOS 上： 必须 越狱 且安装 MobileTerminal&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/1.png" alt="">
-&lt;img src="https://xingxiang.me/images/deb-CN/2.png" alt="">&lt;/p>
-&lt;p>.strings文件模板：&lt;a href="https://xingxiang.me/images/deb-CN/%E6%A8%A1%E6%9D%BF.strings.zip">点击下载&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/1.png" alt="">
+&lt;img src="https://998225.xyz/images/deb-CN/2.png" alt="">&lt;/p>
+&lt;p>.strings文件模板：&lt;a href="https://998225.xyz/images/deb-CN/%E6%A8%A1%E6%9D%BF.strings.zip">点击下载&lt;/a>&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;!-- raw HTML omitted -->
 &lt;p>教程开始：&lt;/p>
 &lt;h2 id="电脑上我的系统是mac-os-x且已安装fink">电脑上：(我的系统是mac os x，且已安装fink)&lt;/h2>
 &lt;p>1.创建需要 同 放置汉化.strings路径一样 的 文件夹 （看完我的第一篇教程：&lt;a href="https://xingxiang.me/blog/466/">https://xingxiang.me/blog/466/&lt;/a>）&lt;/p>
 &lt;p>现在我正在制作 DietBulletin汉化包 ，汉化.strings 需要放到 /Library/PreferenceLoader/Preferences/zh_CN.lproj 里。。看图&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/3.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/3.png" alt="">&lt;/p>
 &lt;p>2.创建DEBIAN文件夹（在此deb文件夹的根目录）并在里面创建 control 文件&lt;/p>
 &lt;p>（看我的第二篇教程：&lt;a href="https://xingxiang.me/blog/463/">https://xingxiang.me/blog/463/&lt;/a>）&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/4.png" alt="">
-&lt;img src="https://xingxiang.me/images/deb-CN/5.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/4.png" alt="">
+&lt;img src="https://998225.xyz/images/deb-CN/5.png" alt="">&lt;/p>
 &lt;ol start="3">
 &lt;li>打开终端，获取su权限&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/6.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/6.png" alt="">&lt;/p>
 &lt;ol start="4">
 &lt;li>输入命令 看图&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/7.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/7.png" alt="">&lt;/p>
 &lt;p>回车&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/8.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/8.png" alt="">&lt;/p>
 &lt;p>至此一个deb汉化包已完成，放到ifile安装就行了。&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/9.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/9.png" alt="">&lt;/p>
 &lt;h2 id="ios设备上">ios设备上：&lt;/h2>
 &lt;p>1.把你刚刚的创建的文件夹放到：/var/mobile 里&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/10.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/10.png" alt="">&lt;/p>
 &lt;p>2.打开MobileTerminal，获取su权限&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/deb-CN/11.png" alt="">&lt;/p></description></item><item><title>Ubuntu 上制作 .deb 详细图文教程</title><link>https://xingxiang.me/blog/463/</link><pubDate>Fri, 31 May 2013 06:27:17 +0000</pubDate><guid>https://xingxiang.me/blog/463/</guid><description>&lt;p>如何汉化插件？ 请看我的第一篇教程： &lt;a href="https://xingxiang.me/blog/466/">https://xingxiang.me/blog/466/&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/deb-CN/11.png" alt="">&lt;/p></description></item><item><title>Ubuntu 上制作 .deb 详细图文教程</title><link>https://998225.xyz/blog/463/</link><pubDate>Fri, 31 May 2013 06:27:17 +0000</pubDate><guid>https://998225.xyz/blog/463/</guid><description>&lt;p>如何汉化插件？ 请看我的第一篇教程： &lt;a href="https://xingxiang.me/blog/466/">https://xingxiang.me/blog/466/&lt;/a>&lt;/p>
 &lt;h2 id="首先认识一下什么是deb">首先认识一下什么是.deb&lt;/h2>
 &lt;p>deb 是 Unix 系统(其实主要是 Linux )下的安装包，基于 tar 包，因此本身会记录文件的权限(读/写/可执行)以及所有者/用户组。&lt;/p>
 &lt;p>由于 Unix 类系统对权限、所有者、组的严格要求，而 deb 格式安装包又经常会涉及到系统比较底层的操作，所以权限等的设置尤其重要。&lt;/p>
@@ -1354,7 +1354,7 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;p>postrm，在删除文件之后运行的脚本；&lt;/p>
 &lt;p>在 Cydia 系统中，Cydia 的作者 Saurik 另外添加了一个脚本，extrainst_，作用与 postinst 类似。&lt;/p>
 &lt;h2 id="准备工作">准备工作：&lt;/h2>
-&lt;p>Ubuntu 13.10 下载地址：&lt;a href="http://www.ubuntu.org.cn/download/desktop">http://www.ubuntu.org.cn/download/desktop&lt;/a>&lt;/p></description></item><item><title>【Cydia 插件汉化教程】 两种方法图文视频详细教程</title><link>https://xingxiang.me/blog/466/</link><pubDate>Sat, 02 Mar 2013 06:29:14 +0000</pubDate><guid>https://xingxiang.me/blog/466/</guid><description>&lt;ul>
+&lt;p>Ubuntu 13.10 下载地址：&lt;a href="http://www.ubuntu.org.cn/download/desktop">http://www.ubuntu.org.cn/download/desktop&lt;/a>&lt;/p></description></item><item><title>【Cydia 插件汉化教程】 两种方法图文视频详细教程</title><link>https://998225.xyz/blog/466/</link><pubDate>Sat, 02 Mar 2013 06:29:14 +0000</pubDate><guid>https://998225.xyz/blog/466/</guid><description>&lt;ul>
 &lt;li>
 &lt;p>转载请标明出处：&lt;a href="https://xingxiang.me/blog/466">https://xingxiang.me/blog/466&lt;/a>&lt;/p>
 &lt;/li>
@@ -1375,7 +1375,7 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;p>//Library/Weeloader&lt;/p>
 &lt;p>//System/Library/WeeAppPlugins&lt;br>
 一般所有的插件都能在其中一个目录里进行汉化 ，大家可以像我一样在iFile创建一个收藏夹…&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/1.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/1.png" alt="">&lt;/p>
 &lt;h2 id="方法一">方法一：&lt;/h2>
 &lt;p>（优点: 较方便。缺点：更新插件会丢失汉化，有的菜单二级目录无法汉化。so 不推荐）&lt;/p>
 &lt;ul>
@@ -1384,32 +1384,32 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;ol>
 &lt;li>首先看到的界面当然是英文的&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/2.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/2.png" alt="">&lt;/p>
 &lt;ol start="2">
 &lt;li>然后打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录）&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/3.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/3.png" alt="">&lt;/p>
 &lt;ol start="3">
 &lt;li>找到Zephyr.plist&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/4.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/4.png" alt="">&lt;/p>
 &lt;ol start="4">
 &lt;li>点击，选择使用文本编辑器打开&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/5.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/5.png" alt="">&lt;/p>
 &lt;ol start="5">
 &lt;li>然后我们先汉化第一个 文本 ：Enabled&lt;/li>
 &lt;/ol>
 &lt;p>点击搜索，输入Enabled&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/6.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/6.png" alt="">&lt;/p>
 &lt;ol start="6">
 &lt;li>然后选择这个单词 注意：旁边的标点别乱删&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/7.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/7.png" alt="">&lt;/p>
 &lt;ol start="7">
 &lt;li>改成 开关&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/8.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/8.png" alt="">&lt;/p>
 &lt;ol start="8">
 &lt;li>
 &lt;p>保存&lt;/p>
@@ -1419,7 +1419,7 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;/li>
 &lt;/ol>
 &lt;p>10.回到设置里一看&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/9.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/9.png" alt="">&lt;/p>
 &lt;p>Finally 成功了!!!!!!&lt;/p>
 &lt;p>但是在此不推荐第一种，因为一些多二级菜单的插件汉化不彻底，而且容易丢失。&lt;/p>
 &lt;h2 id="方法一-视频演示">方法一 视频演示：&lt;/h2>
@@ -1430,17 +1430,17 @@ EFI下的BCD文件，由BCD引导指定系统文件（一般为C:\windows\system
 &lt;ul>
 &lt;li>废话不多说，还是以Zephyr为例……&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/10.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/10.png" alt="">&lt;/p>
 &lt;ol>
 &lt;li>打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录）&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/11.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/11.png" alt="">&lt;/p>
 &lt;ol start="2">
 &lt;li>在此目录创建语言包&lt;/li>
 &lt;/ol>
 &lt;p>简体：zh_CN.lproj&lt;/p>
 &lt;p>繁体：zh_TW.lproj&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/12.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/12.png" alt="">&lt;/p>
 &lt;h2 id="3-找到zephyrplist">3. 找到Zephyr.plist&lt;/h2>
 &lt;ol start="4">
 &lt;li>然后在zh_CN.lproj里创建 Zephyr.strings （文件名与你想修改的plist相同）&lt;/li>

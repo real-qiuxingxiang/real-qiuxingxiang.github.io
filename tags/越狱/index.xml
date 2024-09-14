@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>越狱 on Q's Blog</title><link>https://xingxiang.me/tags/%E8%B6%8A%E7%8B%B1/</link><description>Recent content in 越狱 on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 02 Mar 2013 06:29:14 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>【Cydia 插件汉化教程】 两种方法图文视频详细教程</title><link>https://xingxiang.me/blog/466/</link><pubDate>Sat, 02 Mar 2013 06:29:14 +0000</pubDate><guid>https://xingxiang.me/blog/466/</guid><description>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>越狱 on Q's Blog</title><link>https://998225.xyz/tags/%E8%B6%8A%E7%8B%B1/</link><description>Recent content in 越狱 on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 02 Mar 2013 06:29:14 +0000</lastBuildDate><atom:link href="https://998225.xyz/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>【Cydia 插件汉化教程】 两种方法图文视频详细教程</title><link>https://998225.xyz/blog/466/</link><pubDate>Sat, 02 Mar 2013 06:29:14 +0000</pubDate><guid>https://998225.xyz/blog/466/</guid><description>&lt;ul>
 &lt;li>
 &lt;p>转载请标明出处：&lt;a href="https://xingxiang.me/blog/466">https://xingxiang.me/blog/466&lt;/a>&lt;/p>
 &lt;/li>
@@ -19,7 +19,7 @@
 &lt;p>//Library/Weeloader&lt;/p>
 &lt;p>//System/Library/WeeAppPlugins&lt;br>
 一般所有的插件都能在其中一个目录里进行汉化 ，大家可以像我一样在iFile创建一个收藏夹…&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/1.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/1.png" alt="">&lt;/p>
 &lt;h2 id="方法一">方法一：&lt;/h2>
 &lt;p>（优点: 较方便。缺点：更新插件会丢失汉化，有的菜单二级目录无法汉化。so 不推荐）&lt;/p>
 &lt;ul>
@@ -28,32 +28,32 @@
 &lt;ol>
 &lt;li>首先看到的界面当然是英文的&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/2.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/2.png" alt="">&lt;/p>
 &lt;ol start="2">
 &lt;li>然后打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录）&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/3.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/3.png" alt="">&lt;/p>
 &lt;ol start="3">
 &lt;li>找到Zephyr.plist&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/4.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/4.png" alt="">&lt;/p>
 &lt;ol start="4">
 &lt;li>点击，选择使用文本编辑器打开&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/5.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/5.png" alt="">&lt;/p>
 &lt;ol start="5">
 &lt;li>然后我们先汉化第一个 文本 ：Enabled&lt;/li>
 &lt;/ol>
 &lt;p>点击搜索，输入Enabled&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/6.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/6.png" alt="">&lt;/p>
 &lt;ol start="6">
 &lt;li>然后选择这个单词 注意：旁边的标点别乱删&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/7.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/7.png" alt="">&lt;/p>
 &lt;ol start="7">
 &lt;li>改成 开关&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/8.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/8.png" alt="">&lt;/p>
 &lt;ol start="8">
 &lt;li>
 &lt;p>保存&lt;/p>
@@ -63,7 +63,7 @@
 &lt;/li>
 &lt;/ol>
 &lt;p>10.回到设置里一看&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/9.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/9.png" alt="">&lt;/p>
 &lt;p>Finally 成功了!!!!!!&lt;/p>
 &lt;p>但是在此不推荐第一种，因为一些多二级菜单的插件汉化不彻底，而且容易丢失。&lt;/p>
 &lt;h2 id="方法一-视频演示">方法一 视频演示：&lt;/h2>
@@ -74,17 +74,17 @@
 &lt;ul>
 &lt;li>废话不多说，还是以Zephyr为例……&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/10.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/10.png" alt="">&lt;/p>
 &lt;ol>
 &lt;li>打开iFile，定位到//Library/PreferenceLoader/Preferences （就是上面给出的目录）&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/11.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/11.png" alt="">&lt;/p>
 &lt;ol start="2">
 &lt;li>在此目录创建语言包&lt;/li>
 &lt;/ol>
 &lt;p>简体：zh_CN.lproj&lt;/p>
 &lt;p>繁体：zh_TW.lproj&lt;/p>
-&lt;p>&lt;img src="https://xingxiang.me/images/HanHua/12.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://998225.xyz/images/HanHua/12.png" alt="">&lt;/p>
 &lt;h2 id="3-找到zephyrplist">3. 找到Zephyr.plist&lt;/h2>
 &lt;ol start="4">
 &lt;li>然后在zh_CN.lproj里创建 Zephyr.strings （文件名与你想修改的plist相同）&lt;/li>
