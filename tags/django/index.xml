@@ -1,1 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on Q's Blog</title><link>https://xingxiang.me/tags/django/</link><description>Recent content in Django on Q's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 22 Aug 2018 07:50:40 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>基于Django 开发的博客系统</title><link>https://xingxiang.me/blog/975/</link><pubDate>Wed, 22 Aug 2018 07:50:40 +0000</pubDate><guid>https://xingxiang.me/blog/975/</guid><description> Python 3.6.6 和 Django 2.1.5 MySQL xadmin 后台管理 Simditor Markdown 编辑器，图片 Drag and Drop 上传 代码高亮 RSS订阅 标签、阅读量 haystack 文章内容搜索 Valine 评论系统 集成 django-compressor，静态文件压缩 Usage 新建虚拟环境 git clone git@github.com:chiuxingxiang/Django-Blog.git virtualenv --python=&amp;amp;lt;py3path&amp;gt; venv . venv/bin/activate 安装依赖 pip install -r requirements.txt 数据库迁移 python manage.py makemigrations python manage.py migrate 创建管理员 python manage.py shell from django.contrib.auth.models import User user=User.objects.create_superuser(&amp;#39;用户名&amp;#39;,&amp;#39;邮箱&amp;#39;,&amp;#39;密码&amp;#39;) 创建搜索索引 python manage.py rebuild_index 压缩静态文件 python manage.py collectstatic python manage.py compress 首页 详情页 + 评论 Tag List xadmin后台 Simditor Markdown 文章编辑器 图片上传</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on Q's Blog</title><link>https://xingxiang.me/tags/django/</link><description>Recent content in Django on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 22 Aug 2018 07:50:40 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>基于Django 开发的博客系统</title><link>https://xingxiang.me/blog/975/</link><pubDate>Wed, 22 Aug 2018 07:50:40 +0000</pubDate><guid>https://xingxiang.me/blog/975/</guid><description>&lt;ul>
+&lt;li>Python 3.6.6 和 Django 2.1.5&lt;/li>
+&lt;li>MySQL&lt;/li>
+&lt;li>&lt;a href="https://github.com/sshwsfc/xadmin">xadmin&lt;/a> 后台管理&lt;/li>
+&lt;li>&lt;a href="https://github.com/istommao/django-simditor">Simditor Markdown&lt;/a> 编辑器，图片 Drag and Drop 上传&lt;/li>
+&lt;li>代码高亮&lt;/li>
+&lt;li>RSS订阅&lt;/li>
+&lt;li>标签、阅读量&lt;/li>
+&lt;li>&lt;a href="https://github.com/django-haystack/django-haystack">haystack&lt;/a> 文章内容搜索&lt;/li>
+&lt;li>&lt;a href="https://github.com/xCss/Valine">Valine&lt;/a> 评论系统&lt;/li>
+&lt;li>集成 django-compressor，静态文件压缩&lt;/li>
+&lt;/ul>
+&lt;h3 id="usage">Usage&lt;/h3>
+&lt;ul>
+&lt;li>新建虚拟环境&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone git@github.com:chiuxingxiang/Django-Blog.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>virtualenv --python&lt;span style="color:#f92672">=&lt;/span>&amp;amp;lt;py3path&amp;gt; venv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>. venv/bin/activate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>安装依赖&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>数据库迁移&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python manage.py makemigrations
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py migrate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>创建管理员&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python manage.py shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>from django.contrib.auth.models import User
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>user&lt;span style="color:#f92672">=&lt;/span>User.objects.create_superuser&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;用户名&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;邮箱&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;密码&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>创建搜索索引&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python manage.py rebuild_index
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>压缩静态文件&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python manage.py collectstatic
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py compress
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="首页">首页&lt;/h3>
+&lt;p>&lt;img src="https://xingxiang.me/images/github_pic/index.png" alt="index" title="">&lt;/p></description></item></channel></rss>

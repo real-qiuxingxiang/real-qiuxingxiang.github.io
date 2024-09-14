@@ -1,6 +1,470 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C on Q's Blog</title><link>https://xingxiang.me/tags/c/</link><description>Recent content in C on Q's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Dec 2017 05:46:56 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/c/index.xml" rel="self" type="application/rss+xml"/><item><title>C语言 动态创建链表 Linked List</title><link>https://xingxiang.me/blog/914/</link><pubDate>Thu, 28 Dec 2017 05:46:56 +0000</pubDate><guid>https://xingxiang.me/blog/914/</guid><description>#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; typedef struct LinkedListNode { int data; struct LinkedListNode *next; } NODE; NODE *creatList(int n, int m) { NODE *temp=NULL; NODE *origin; NODE *extend; origin=(NODE*)malloc(sizeof(NODE)); temp=origin; origin-&amp;gt;next=NULL; for(int i=1;i&amp;amp;lt;=n;i+=1){ extend=(NODE*)malloc(sizeof(NODE)); extend-&amp;gt;data=i; extend-&amp;gt;next=origin-&amp;gt;next; origin-&amp;gt;next=extend; origin=origin-&amp;gt;next; } return temp; } void outputLink(NODE *head) { NODE *temp; temp=head-&amp;gt;next; printf(&amp;#34;HEAD&amp;#34;); while(temp){ printf(&amp;#34;-&amp;gt;%d&amp;#34;,temp-&amp;gt;data); temp=temp-&amp;gt;next; } } int main() { NODE *head; head=creatList(10,10); outputLink(head); return 0; }</description></item><item><title>C语言 大数加法 减法 乘法</title><link>https://xingxiang.me/blog/902/</link><pubDate>Mon, 27 Nov 2017 14:36:45 +0000</pubDate><guid>https://xingxiang.me/blog/902/</guid><description>#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;string.h&amp;gt; void stringReverse(char * p)//逆序字符串 { int i,len; char temp; len = strlen(p); for(i=0; i&amp;amp;lt;(len/2); i++) { temp = p[i]; p[i] = p[len-1-i]; p[len-1-i] = temp; } } char* getString()//动态字符串输入 { char *str; char *_str; int i=1; str=(char*)malloc(sizeof(char)*(i+1)); while((str[i-1]=getchar())!=&amp;#39;\n&amp;#39;){ i+=1; _str=(char*)malloc(strlen(str)+1); str[i-1]=&amp;#39;\0&amp;#39;; strcpy(_str,str); free(str); str=(char*)malloc(sizeof(char)*(i+1)); if(str==NULL){ free(_str); printf(&amp;#34;Not enough memory!&amp;#34;); return NULL; } strcpy(str,_str); free(_str); } str[i-1]=&amp;#39;\0&amp;#39;; return str; } char* remove_0(char *c)//删除0 { char *temp,*ch; temp=c; while(*temp){ if(*temp!</description></item><item><title>C语言 扫雷</title><link>https://xingxiang.me/blog/890/</link><pubDate>Mon, 04 Sep 2017 03:44:42 +0000</pubDate><guid>https://xingxiang.me/blog/890/</guid><description>Minesweeper in C
-C语言扫雷
-9*9
-可以自动消除一大片
-代码如下：
-#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;time.h&amp;gt; #define N 9 //9*9扫雷 int sum = 10; //雷数目 int mine[N][N] = {0}; //雷数组 int map[N][N]; //显示数组 int markDirection[8][2] = {{0,1},{1,1},{1,0},{1,-1},{0,-1},{-1,-1},{-1,0},{-1,1}}; //8个方向 void printMap() //打印地图 { int i = 0,j = 0; for(i=0;i&amp;amp;lt;N;i++) { for(j=0;j&amp;amp;lt;N;j++) { printf(&amp;#34;%d &amp;#34;,map[i][j]); } printf(&amp;#34;\n&amp;#34;); } } void setMine() //埋雷 { srand((int)time(0)); int x=0,y=0; while(sum &amp;gt;= 0) { x = (rand()%(9-1+1))+1; y = (rand()%(9-1+1))+1; if(mine[x][y] !</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C on Q's Blog</title><link>https://xingxiang.me/tags/c/</link><description>Recent content in C on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Dec 2017 05:46:56 +0000</lastBuildDate><atom:link href="https://xingxiang.me/tags/c/index.xml" rel="self" type="application/rss+xml"/><item><title>C语言 动态创建链表 Linked List</title><link>https://xingxiang.me/blog/914/</link><pubDate>Thu, 28 Dec 2017 05:46:56 +0000</pubDate><guid>https://xingxiang.me/blog/914/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> LinkedListNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">struct&lt;/span> LinkedListNode &lt;span style="color:#f92672">*&lt;/span>next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} NODE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NODE &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">creatList&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> n, &lt;span style="color:#66d9ef">int&lt;/span> m)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NODE &lt;span style="color:#f92672">*&lt;/span>temp&lt;span style="color:#f92672">=&lt;/span>NULL;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NODE &lt;span style="color:#f92672">*&lt;/span>origin;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NODE &lt;span style="color:#f92672">*&lt;/span>extend;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> origin&lt;span style="color:#f92672">=&lt;/span>(NODE&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#66d9ef">sizeof&lt;/span>(NODE));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">=&lt;/span>origin;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> origin&lt;span style="color:#f92672">-&amp;gt;&lt;/span>next&lt;span style="color:#f92672">=&lt;/span>NULL;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#f92672">=&lt;/span>n;i&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> extend&lt;span style="color:#f92672">=&lt;/span>(NODE&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#66d9ef">sizeof&lt;/span>(NODE));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> extend&lt;span style="color:#f92672">-&amp;gt;&lt;/span>data&lt;span style="color:#f92672">=&lt;/span>i;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> extend&lt;span style="color:#f92672">-&amp;gt;&lt;/span>next&lt;span style="color:#f92672">=&lt;/span>origin&lt;span style="color:#f92672">-&amp;gt;&lt;/span>next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> origin&lt;span style="color:#f92672">-&amp;gt;&lt;/span>next&lt;span style="color:#f92672">=&lt;/span>extend;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> origin&lt;span style="color:#f92672">=&lt;/span>origin&lt;span style="color:#f92672">-&amp;gt;&lt;/span>next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">outputLink&lt;/span>(NODE &lt;span style="color:#f92672">*&lt;/span>head)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NODE &lt;span style="color:#f92672">*&lt;/span>temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">=&lt;/span>head&lt;span style="color:#f92672">-&amp;gt;&lt;/span>next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;HEAD&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(temp){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;-&amp;gt;%d&amp;#34;&lt;/span>,temp&lt;span style="color:#f92672">-&amp;gt;&lt;/span>data);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">=&lt;/span>temp&lt;span style="color:#f92672">-&amp;gt;&lt;/span>next;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NODE &lt;span style="color:#f92672">*&lt;/span>head;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#a6e22e">creatList&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>,&lt;span style="color:#ae81ff">10&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">outputLink&lt;/span>(head);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C语言 大数加法 减法 乘法</title><link>https://xingxiang.me/blog/902/</link><pubDate>Mon, 27 Nov 2017 14:36:45 +0000</pubDate><guid>https://xingxiang.me/blog/902/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;string.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span> p)&lt;span style="color:#75715e">//逆序字符串
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i,len;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(p);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>; i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;(len&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>); i&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp &lt;span style="color:#f92672">=&lt;/span> p[i];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p[i] &lt;span style="color:#f92672">=&lt;/span> p[len&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">-&lt;/span>i];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p[len&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">-&lt;/span>i] &lt;span style="color:#f92672">=&lt;/span> temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">getString&lt;/span>()&lt;span style="color:#75715e">//动态字符串输入
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>str;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>_str;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>)&lt;span style="color:#f92672">*&lt;/span>(i&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>((str[i&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#a6e22e">getchar&lt;/span>())&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _str&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#a6e22e">strlen&lt;/span>(str)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str[i&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">strcpy&lt;/span>(_str,str);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">free&lt;/span>(str);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>)&lt;span style="color:#f92672">*&lt;/span>(i&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(str&lt;span style="color:#f92672">==&lt;/span>NULL){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">free&lt;/span>(_str);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Not enough memory!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> NULL;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">strcpy&lt;/span>(str,_str);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">free&lt;/span>(_str);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str[i&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> str;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">remove_0&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>c)&lt;span style="color:#75715e">//删除0
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>temp,&lt;span style="color:#f92672">*&lt;/span>ch;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">=&lt;/span>c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>temp){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>temp&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch&lt;span style="color:#f92672">=&lt;/span>c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>temp){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>ch&lt;span style="color:#f92672">=*&lt;/span>temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>ch&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>a,&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>b)&lt;span style="color:#75715e">//加法
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>ch1,&lt;span style="color:#f92672">*&lt;/span>ch2,&lt;span style="color:#f92672">*&lt;/span>ch3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> len&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(a)&lt;span style="color:#f92672">&amp;gt;=&lt;/span>&lt;span style="color:#a6e22e">strlen&lt;/span>(b) &lt;span style="color:#f92672">?&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(a) &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>)&lt;span style="color:#f92672">*&lt;/span>(len&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(a);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch1&lt;span style="color:#f92672">=&lt;/span>a;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch2&lt;span style="color:#f92672">=&lt;/span>b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch3&lt;span style="color:#f92672">=&lt;/span>c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch1&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#f92672">*&lt;/span>ch2&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch1&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) i&lt;span style="color:#f92672">=*&lt;/span>ch1&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch2&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) j&lt;span style="color:#f92672">=*&lt;/span>ch2&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x&lt;span style="color:#f92672">=&lt;/span>i&lt;span style="color:#f92672">+&lt;/span>j&lt;span style="color:#f92672">+&lt;/span>y;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>ch3&lt;span style="color:#f92672">=&lt;/span>(x&lt;span style="color:#f92672">%&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch3&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y&lt;span style="color:#f92672">=&lt;/span>x&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch1&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) ch1&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch2&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) ch2&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>ch3&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">minus&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>a,&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>b)&lt;span style="color:#75715e">//减法
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>ch1,&lt;span style="color:#f92672">*&lt;/span>ch2,&lt;span style="color:#f92672">*&lt;/span>ch3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> sign&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> len&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(a)&lt;span style="color:#f92672">&amp;gt;=&lt;/span>&lt;span style="color:#a6e22e">strlen&lt;/span>(b) &lt;span style="color:#f92672">?&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(a) &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>)&lt;span style="color:#f92672">*&lt;/span>len);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>((&lt;span style="color:#a6e22e">strlen&lt;/span>(a)&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#a6e22e">strlen&lt;/span>(b) &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#a6e22e">strcmp&lt;/span>(a,b)&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#ae81ff">0&lt;/span>) &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#a6e22e">strlen&lt;/span>(a)&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#a6e22e">strlen&lt;/span>(b)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">=&lt;/span>a;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#f92672">=&lt;/span>b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b&lt;span style="color:#f92672">=&lt;/span>temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sign&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(a);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch1&lt;span style="color:#f92672">=&lt;/span>a;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch2&lt;span style="color:#f92672">=&lt;/span>b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch3&lt;span style="color:#f92672">=&lt;/span>c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch1&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#f92672">*&lt;/span>ch2&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch1&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) i&lt;span style="color:#f92672">=*&lt;/span>ch1&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch2&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) j&lt;span style="color:#f92672">=*&lt;/span>ch2&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x&lt;span style="color:#f92672">=&lt;/span>i&lt;span style="color:#f92672">-&lt;/span>j&lt;span style="color:#f92672">-&lt;/span>y;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(x&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#ae81ff">0&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>ch3&lt;span style="color:#f92672">=&lt;/span>(x&lt;span style="color:#f92672">%&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ch3&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch1&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) ch1&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">*&lt;/span>ch2&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>) ch2&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>ch3&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">remove_0&lt;/span>(c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(sign&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">by&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>a,&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>b)&lt;span style="color:#75715e">//乘法
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> len&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> temp&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#a6e22e">strlen&lt;/span>(a)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#a6e22e">strlen&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(a);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span>)&lt;span style="color:#a6e22e">malloc&lt;/span>(&lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>)&lt;span style="color:#f92672">*&lt;/span>(len&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">memset&lt;/span>(c,&lt;span style="color:#ae81ff">0&lt;/span>,&lt;span style="color:#66d9ef">sizeof&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span>)&lt;span style="color:#f92672">*&lt;/span>(len&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#a6e22e">strlen&lt;/span>(b);i&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;j&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#a6e22e">strlen&lt;/span>(a);j&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x&lt;span style="color:#f92672">=&lt;/span>a[j]&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y&lt;span style="color:#f92672">=&lt;/span>b[i]&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp&lt;span style="color:#f92672">=&lt;/span>x&lt;span style="color:#f92672">*&lt;/span>y;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c[i&lt;span style="color:#f92672">+&lt;/span>j]&lt;span style="color:#f92672">+=&lt;/span>temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;len;i&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c[i]&lt;span style="color:#f92672">+=&lt;/span>x;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x&lt;span style="color:#f92672">=&lt;/span>c[i]&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c[i]&lt;span style="color:#f92672">%=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;len;i&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c[i]&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;0&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stringReverse&lt;/span>(c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">remove_0&lt;/span>(c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> c;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>a,&lt;span style="color:#f92672">*&lt;/span>b,&lt;span style="color:#f92672">*&lt;/span>operator;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Infinite Positive Integer Operation&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;-----------------------&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Please enter the first positive integer:&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#a6e22e">getString&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Please enter the operator(+ - * /):&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> operator&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#a6e22e">getString&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Please enter the second positive integer:&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#a6e22e">getString&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;The result is:&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">switch&lt;/span> (&lt;span style="color:#f92672">*&lt;/span>operator){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;+&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">puts&lt;/span>(&lt;span style="color:#a6e22e">add&lt;/span>(a,b));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;-&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">puts&lt;/span>(&lt;span style="color:#a6e22e">minus&lt;/span>(a,b));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;*&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">puts&lt;/span>(&lt;span style="color:#a6e22e">by&lt;/span>(a,b));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/*case &amp;#39;/&amp;#39;:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> puts(divide(a,b));
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> break;*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">default&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;error&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C语言 扫雷</title><link>https://xingxiang.me/blog/890/</link><pubDate>Mon, 04 Sep 2017 03:44:42 +0000</pubDate><guid>https://xingxiang.me/blog/890/</guid><description>&lt;p>Minesweeper in C&lt;/p>
+&lt;p>C语言扫雷&lt;/p>
+&lt;p>9*9&lt;/p>
+&lt;p>可以自动消除一大片&lt;/p>
+&lt;p>代码如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;time.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#define N 9 &lt;/span>&lt;span style="color:#75715e">//9*9扫雷
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> sum &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>; &lt;span style="color:#75715e">//雷数目
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> mine[N][N] &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#ae81ff">0&lt;/span>}; &lt;span style="color:#75715e">//雷数组
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> map[N][N]; &lt;span style="color:#75715e">//显示数组
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> markDirection[&lt;span style="color:#ae81ff">8&lt;/span>][&lt;span style="color:#ae81ff">2&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> {{&lt;span style="color:#ae81ff">0&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>},{&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>},{&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">0&lt;/span>},{&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>},{&lt;span style="color:#ae81ff">0&lt;/span>,&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>},{&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>},{&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">0&lt;/span>},{&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>}}; &lt;span style="color:#75715e">//8个方向
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">printMap&lt;/span>() &lt;span style="color:#75715e">//打印地图
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>,j &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;i&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;j&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;j&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%d &amp;#34;&lt;/span>,map[i][j]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setMine&lt;/span>() &lt;span style="color:#75715e">//埋雷
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">srand&lt;/span>((&lt;span style="color:#66d9ef">int&lt;/span>)&lt;span style="color:#a6e22e">time&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(sum &lt;span style="color:#f92672">&amp;gt;=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#f92672">=&lt;/span> (&lt;span style="color:#a6e22e">rand&lt;/span>()&lt;span style="color:#f92672">%&lt;/span>(&lt;span style="color:#ae81ff">9&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>))&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#f92672">=&lt;/span> (&lt;span style="color:#a6e22e">rand&lt;/span>()&lt;span style="color:#f92672">%&lt;/span>(&lt;span style="color:#ae81ff">9&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>))&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(mine[x][y] &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mine[x][y] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sum &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">countMine&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> x,&lt;span style="color:#66d9ef">int&lt;/span> y) &lt;span style="color:#75715e">//数雷
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, y1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;i&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x1 &lt;span style="color:#f92672">=&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> markDirection[i][&lt;span style="color:#ae81ff">0&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y1 &lt;span style="color:#f92672">=&lt;/span> y &lt;span style="color:#f92672">+&lt;/span> markDirection[i][&lt;span style="color:#ae81ff">1&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(x1&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">||&lt;/span> x1&lt;span style="color:#f92672">&amp;gt;=&lt;/span>N &lt;span style="color:#f92672">||&lt;/span> y1&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">||&lt;/span> y1&lt;span style="color:#f92672">&amp;gt;=&lt;/span>N) &lt;span style="color:#66d9ef">continue&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(mine[x1][y1] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>) count &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> count;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">autoClear&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> x,&lt;span style="color:#66d9ef">int&lt;/span> y) &lt;span style="color:#75715e">//自动消一大片
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, y1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> count &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> map[x][y] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;i&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x1 &lt;span style="color:#f92672">=&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> markDirection[i][&lt;span style="color:#ae81ff">0&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y1 &lt;span style="color:#f92672">=&lt;/span> y &lt;span style="color:#f92672">+&lt;/span> markDirection[i][&lt;span style="color:#ae81ff">1&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(x1&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">||&lt;/span> x1&lt;span style="color:#f92672">&amp;gt;=&lt;/span>N &lt;span style="color:#f92672">||&lt;/span> y1&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;&lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">||&lt;/span> y1&lt;span style="color:#f92672">&amp;gt;=&lt;/span>N) &lt;span style="color:#66d9ef">continue&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">countMine&lt;/span>(x1,y1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(count &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> map[x1][y1] &lt;span style="color:#f92672">=&lt;/span> count;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(map[x1][y1]&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">continue&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">autoClear&lt;/span>(x1,y1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">winCheck&lt;/span>() &lt;span style="color:#75715e">//赢了吗
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> count &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;i&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;j&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;j&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(map[i][j] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">9&lt;/span>) count &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(count &lt;span style="color:#f92672">==&lt;/span> sum)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">Gameover&lt;/span>() &lt;span style="color:#75715e">//炸了
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>,j &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;i&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;j&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;j&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%d &amp;#34;&lt;/span>,mine[i][j]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> X&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,Y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>,j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> check&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;i&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(j&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;j&lt;span style="color:#f92672">&amp;amp;&lt;/span>lt;N;j&lt;span style="color:#f92672">++&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> map[i][j] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">9&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;*********扫雷**********&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printMap&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setMine&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(result)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;输入 行,列&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">scanf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%d,%d&amp;#34;&lt;/span>,&lt;span style="color:#f92672">&amp;amp;&lt;/span>X,&lt;span style="color:#f92672">&amp;amp;&lt;/span>Y);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> X &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Y &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(mine[X][Y] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Game over!&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Gameover&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> check &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">countMine&lt;/span>(X,Y);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(check &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> map[X][Y] &lt;span style="color:#f92672">=&lt;/span> check;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">autoClear&lt;/span>(X,Y);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printMap&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">winCheck&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;You win!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>代码：&lt;a href="https://github.com/real-qiuxingxiang/Minesweeper-C">https://github.com/real-qiuxingxiang/Minesweeper-C&lt;/a>&lt;/p></description></item></channel></rss>

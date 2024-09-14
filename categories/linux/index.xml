@@ -1,29 +1,153 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Q's Blog</title><link>https://xingxiang.me/categories/linux/</link><description>Recent content in Linux on Q's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Apr 2021 09:36:01 +0000</lastBuildDate><atom:link href="https://xingxiang.me/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>nginx SNI 配置</title><link>https://xingxiang.me/blog/1095/</link><pubDate>Mon, 19 Apr 2021 09:36:01 +0000</pubDate><guid>https://xingxiang.me/blog/1095/</guid><description>Server Name Indication (SNI) ，也被称为TLS 服务器名称指示。
-本配置基于CentOS 8，且仅仅开启nginx的SNI功能。
-1.新建用户 useradd -r -d /var/cache/nginx/ -s /sbin/nologin -U nginx mkdir -p /var/cache/nginx/ chown -R nginx:nginx /var/cache/nginx/ 2. 编译安装nginx，仅仅编译所需要的模块 cd /usr/local/src wget https://nginx.org/download/nginx-1.19.10.tar.gz tar -xzvf nginx-1.19.10.tar.gz cd nginx-1.19.10 ./configure --prefix=/etc/nginx --user=nginx --group=nginx --with-stream --with-stream_ssl_preread_module make make install 3. 测试nginx是否安装成功 nginx -t 4. 创建nginx服务（已CentOS为例） cd /lib/systemd/system/ vim nginx.service # [Unit] # Description=nginx # Documentation=https://nginx.org/en/docs/ # After=network-online.target remote-fs.target nss-lookup.target # Wants=network-online.target # [Service] # Type=forking # PIDFile=/etc/nginx/logs/nginx.</description></item><item><title>Twitter 取消所有喜欢</title><link>https://xingxiang.me/blog/991/</link><pubDate>Mon, 25 Nov 2019 09:35:15 +0000</pubDate><guid>https://xingxiang.me/blog/991/</guid><description>用 Chrome 打开 Twitter 网页版 Like 页面，在 Console 运行以下脚本，等待便可：
-setInterval(() =&amp;gt; { for (const d of document.querySelectorAll(&amp;#39;div[data-testid=&amp;#34;unlike&amp;#34;]&amp;#39;)) { d.click() } window.scrollTo(0, document.body.scrollHeight) }, 1000)</description></item><item><title>SSH 免 IP 用户名 连接</title><link>https://xingxiang.me/blog/925/</link><pubDate>Mon, 26 Feb 2018 13:32:08 +0000</pubDate><guid>https://xingxiang.me/blog/925/</guid><description>配置服务器别名，使用别名代替 IP。
-打开或新建 ~/.ssh/config 文件，输入以下内容：
-Host server-alias # server-alias为SSH链接的服务器别名，随便改自己的 HostName server-ip # 服务器 IP Port 22 # 端口 User username # 服务器端用户名 PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa # 私钥，默认为 ~/.ssh/id_rsa 以后就可以通过以下命令连接 SSH
-ssh server-alias</description></item><item><title>SSH 免密码登录 ssh-copy-id 命令</title><link>https://xingxiang.me/blog/923/</link><pubDate>Thu, 22 Feb 2018 13:19:33 +0000</pubDate><guid>https://xingxiang.me/blog/923/</guid><description>如果你管理一台 Linux Server，那么你就会知道每次 SSH 登录时或者使用 scp 复制文件时都要输入密码是一个多么繁琐的过程，免密码登陆其实很简单。
-SSH无密码登录的设置步骤：
-1.本地 Linux 生成 SSH 密钥和 SSH 公钥 首先我们在自己的 Linux 系统上生成一对 SSH Key：SSH密钥和SSH公钥。密钥保存在自己的Linux系统上。
-然后公钥上传到 Linux Server，之后我们就能无密码SSH登录了。
-打开终端，使用下面的 ssh-keygen 来生成 RSA 密钥和公钥．-t表示type，就是说要生成RSA加密的钥匙．
-ssh-keygen -t rsa RSA也是默认的加密类型．所以你也可以只输入 ssh-keygen。默认的RSA长度是2048位，也可以指定 4096 位长度．
-ssh-keygen -b 4096 -t rsa 生成 SSH Key 的过程中会要求你指定一个文件来保存密钥，按Enter键使用默认即可。然后需要输入一个密码来加密你的SSH Key。
-SSH 密钥会保存在 home 目录下的.ssh/id_rsa 文件中。
-SSH公钥保存在.ssh/id_rsa.pub文件中．
-Generating public/private rsa key pair. Enter file in which to save the key (/home/matrix/.ssh/id_rsa): 按Enter键 Enter passphrase (empty for no passphrase): 输入一个密码 Enter same passphrase again: 再次输入密码 Your identification has been saved in /home/matrix/.</description></item><item><title>CentOS: 增加/调整 Swap 大小</title><link>https://xingxiang.me/blog/922/</link><pubDate>Thu, 22 Feb 2018 12:23:43 +0000</pubDate><guid>https://xingxiang.me/blog/922/</guid><description>第一步：关闭 Swap
-sudo swapoff -a 第二步：把当前的 Swap 文件增大
-sudo dd if=/dev/zero of=/swapfile bs=1M count=1024 bs 指的是 Block Size，就是每一块的大小。这里是 1M，意思就是 count 以 1M 为单位的。
-count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新的 Swap 大小为 1Gb。
-第三步：把增大后的文件变为 Swap 文件。
-sudo mkswap /swapfile 第四步：重新打开 Swap
-sudo swapon /swapfile 第五步：让 Swap 在启动的时候，自动生效。打开 /etc/fstab 文件
-sudo vim /etc/fstab 第六步：再vim里，加上以下命令。然后保存。
-/swapfile swap swap defaults 0 0</description></item><item><title>树莓派apt加速 替换apt源为国内镜像</title><link>https://xingxiang.me/blog/838/</link><pubDate>Mon, 26 Dec 2016 06:32:27 +0000</pubDate><guid>https://xingxiang.me/blog/838/</guid><description>因为众所周知的原因，Linux默认的apt源在国内神慢……换吧
-1.改sources.list
-sudo vim /etc/apt/sources.list 内容全部改为
-deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi #deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi 2.改raspi.list
-sudo vim /etc/apt/sources.list.d/raspi.list 内容全部改为
-deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui deb-src http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui 爽快！</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Q's Blog</title><link>https://xingxiang.me/categories/linux/</link><description>Recent content in Linux on Q's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Apr 2021 09:36:01 +0000</lastBuildDate><atom:link href="https://xingxiang.me/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>nginx SNI 配置</title><link>https://xingxiang.me/blog/1095/</link><pubDate>Mon, 19 Apr 2021 09:36:01 +0000</pubDate><guid>https://xingxiang.me/blog/1095/</guid><description>&lt;p>Server Name Indication (SNI) ，也被称为&lt;!-- raw HTML omitted -->TLS 服务器名称指示&lt;!-- raw HTML omitted -->。&lt;/p>
+&lt;p>本配置基于CentOS 8，且仅仅开启nginx的SNI功能。&lt;/p>
+&lt;h3 id="1新建用户">1.新建用户&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>useradd -r -d /var/cache/nginx/ -s /sbin/nologin -U nginx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p /var/cache/nginx/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown -R nginx:nginx /var/cache/nginx/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-编译安装nginx仅仅编译所需要的模块">2. 编译安装nginx，仅仅编译所需要的模块&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd /usr/local/src
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://nginx.org/download/nginx-1.19.10.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar -xzvf nginx-1.19.10.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd nginx-1.19.10
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure --prefix&lt;span style="color:#f92672">=&lt;/span>/etc/nginx --user&lt;span style="color:#f92672">=&lt;/span>nginx --group&lt;span style="color:#f92672">=&lt;/span>nginx --with-stream --with-stream_ssl_preread_module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-测试nginx是否安装成功">3. 测试nginx是否安装成功&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -t
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="4-创建nginx服务已centos为例">4. 创建nginx服务（已CentOS为例）&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd /lib/systemd/system/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim nginx.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># [Unit]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Description=nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Documentation=https://nginx.org/en/docs/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># After=network-online.target remote-fs.target nss-lookup.target&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Wants=network-online.target&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># [Service]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Type=forking&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># PIDFile=/etc/nginx/logs/nginx.pid&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ExecStartPre=/etc/nginx/sbin/nginx -t -c /etc/nginx/conf/nginx.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ExecStart=/etc/nginx/sbin/nginx -c /etc/nginx/conf/nginx.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ExecReload=/bin/kill -s HUP $MAINPID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ExecStop=/bin/kill -s TERM $MAINPID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># [Install]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># WantedBy=multi-user.target&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#开机启动&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl enable nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="5-nginx配置文件">5. nginx配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nginx" data-lang="nginx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">user&lt;/span> &lt;span style="color:#e6db74">nginx&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">worker_processes&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">error_log&lt;/span> &lt;span style="color:#e6db74">/etc/nginx/logs/error.log&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#error_log logs/error.log notice;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#error_log logs/error.log info;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">pid&lt;/span> &lt;span style="color:#e6db74">/etc/nginx/logs/nginx.pid&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">events&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">worker_connections&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">stream&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">map&lt;/span> $ssl_preread_server_name $backend_name {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">example.com&lt;/span> &lt;span style="color:#e6db74">web&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">test.example.com&lt;/span> &lt;span style="color:#e6db74">service1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">default&lt;/span> &lt;span style="color:#e6db74">web&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">upstream&lt;/span> &lt;span style="color:#e6db74">web&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server&lt;/span> 127.0.0.1:&lt;span style="color:#ae81ff">9999&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">upstream&lt;/span> &lt;span style="color:#e6db74">service1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server&lt;/span> 127.0.0.1:&lt;span style="color:#ae81ff">9998&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">listen&lt;/span> &lt;span style="color:#ae81ff">443&lt;/span> &lt;span style="color:#e6db74">reuseport&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">listen&lt;/span> &lt;span style="color:#e6db74">[::]:443&lt;/span> &lt;span style="color:#e6db74">reuseport&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">proxy_pass&lt;/span> $backend_name;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ssl_preread&lt;/span> &lt;span style="color:#66d9ef">on&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="6-启动nginx">6. 启动nginx&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl start nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Twitter 取消所有喜欢</title><link>https://xingxiang.me/blog/991/</link><pubDate>Mon, 25 Nov 2019 09:35:15 +0000</pubDate><guid>https://xingxiang.me/blog/991/</guid><description>&lt;p>用 Chrome 打开 Twitter 网页版 Like 页面，在 Console 运行以下脚本，等待便可：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">setInterval&lt;/span>(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">d&lt;/span> &lt;span style="color:#66d9ef">of&lt;/span> document.&lt;span style="color:#a6e22e">querySelectorAll&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;div[data-testid=&amp;#34;unlike&amp;#34;]&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">click&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window.&lt;span style="color:#a6e22e">scrollTo&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>, document.&lt;span style="color:#a6e22e">body&lt;/span>.&lt;span style="color:#a6e22e">scrollHeight&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}, &lt;span style="color:#ae81ff">1000&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH 免 IP 用户名 连接</title><link>https://xingxiang.me/blog/925/</link><pubDate>Mon, 26 Feb 2018 13:32:08 +0000</pubDate><guid>https://xingxiang.me/blog/925/</guid><description>&lt;p>配置服务器别名，使用别名代替 IP。&lt;/p>
+&lt;p>打开或新建 ~/.ssh/config 文件，输入以下内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Host server-alias &lt;span style="color:#75715e"># server-alias为SSH链接的服务器别名，随便改自己的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName server-ip &lt;span style="color:#75715e"># 服务器 IP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Port &lt;span style="color:#ae81ff">22&lt;/span> &lt;span style="color:#75715e"># 端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User username &lt;span style="color:#75715e"># 服务器端用户名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PreferredAuthentications publickey 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile ~/.ssh/id_rsa &lt;span style="color:#75715e"># 私钥，默认为 ~/.ssh/id_rsa&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>以后就可以通过以下命令连接 SSH&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh server-alias
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH 免密码登录 ssh-copy-id 命令</title><link>https://xingxiang.me/blog/923/</link><pubDate>Thu, 22 Feb 2018 13:19:33 +0000</pubDate><guid>https://xingxiang.me/blog/923/</guid><description>&lt;p>如果你管理一台 Linux Server，那么你就会知道每次 SSH 登录时或者使用 scp 复制文件时都要输入密码是一个多么繁琐的过程，免密码登陆其实很简单。&lt;/p>
+&lt;p>SSH无密码登录的设置步骤：&lt;/p>
+&lt;h2 id="1本地-linux-生成-ssh-密钥和-ssh-公钥">1.本地 Linux 生成 SSH 密钥和 SSH 公钥&lt;/h2>
+&lt;p>首先我们在自己的 Linux 系统上生成一对 SSH Key：SSH密钥和SSH公钥。密钥保存在自己的Linux系统上。&lt;/p>
+&lt;p>然后公钥上传到 Linux Server，之后我们就能无密码SSH登录了。&lt;/p>
+&lt;p>打开终端，使用下面的 ssh-keygen 来生成 RSA 密钥和公钥．-t表示type，就是说要生成RSA加密的钥匙．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>RSA也是默认的加密类型．所以你也可以只输入 ssh-keygen。默认的RSA长度是2048位，也可以指定 4096 位长度．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -b &lt;span style="color:#ae81ff">4096&lt;/span> -t rsa
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>生成 SSH Key 的过程中会要求你指定一个文件来保存密钥，按Enter键使用默认即可。然后需要输入一个密码来加密你的SSH Key。&lt;br>
+SSH 密钥会保存在 home 目录下的.ssh/id_rsa 文件中。&lt;br>
+SSH公钥保存在.ssh/id_rsa.pub文件中．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Generating public/private rsa key pair.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter file in which to save the key &lt;span style="color:#f92672">(&lt;/span>/home/matrix/.ssh/id_rsa&lt;span style="color:#f92672">)&lt;/span>: 　按Enter键
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter passphrase &lt;span style="color:#f92672">(&lt;/span>empty &lt;span style="color:#66d9ef">for&lt;/span> no passphrase&lt;span style="color:#f92672">)&lt;/span>: 　　输入一个密码
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter same passphrase again: 　　再次输入密码
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identification has been saved in /home/matrix/.ssh/id_rsa.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your public key has been saved in /home/matrix/.ssh/id_rsa.pub.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The key fingerprint is:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e1:dc:ab:ae:b6:19:b0:19:74:d5:fe:57:3f:32:b4:d0 matrix@vivid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The key&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>s randomart image is:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---&lt;span style="color:#f92672">[&lt;/span>RSA 4096&lt;span style="color:#f92672">]&lt;/span>----+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| .. |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| . . |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| . . .. . |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| . . o o.. E .|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| o S ..o ...|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| &lt;span style="color:#f92672">=&lt;/span> ..+...|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| o . . .o .|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| .o . |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| .++o |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-----------------+
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="２将-ssh-公钥上传到linux服务器">２将 SSH 公钥上传到Linux服务器&lt;/h2>
+&lt;p>可以使用ssh-copy-id命令来完成。&lt;/p></description></item><item><title>CentOS: 增加/调整 Swap 大小</title><link>https://xingxiang.me/blog/922/</link><pubDate>Thu, 22 Feb 2018 12:23:43 +0000</pubDate><guid>https://xingxiang.me/blog/922/</guid><description>&lt;p>第一步：关闭 Swap&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo swapoff -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>第二步：把当前的 Swap 文件增大&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero of&lt;span style="color:#f92672">=&lt;/span>/swapfile bs&lt;span style="color:#f92672">=&lt;/span>1M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1024&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>bs 指的是 Block Size，就是每一块的大小。这里是 1M，意思就是 count 以 1M 为单位的。&lt;br>
+count 就是新的 swapfile 要多少个 block。这里是1024，就是说，新的 Swap 大小为 1Gb。&lt;/p>
+&lt;p>第三步：把增大后的文件变为 Swap 文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo mkswap /swapfile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>第四步：重新打开 Swap&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo swapon /swapfile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>第五步：让 Swap 在启动的时候，自动生效。打开 /etc/fstab 文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/fstab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>第六步：再vim里，加上以下命令。然后保存。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/swapfile swap swap defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>树莓派apt加速 替换apt源为国内镜像</title><link>https://xingxiang.me/blog/838/</link><pubDate>Mon, 26 Dec 2016 06:32:27 +0000</pubDate><guid>https://xingxiang.me/blog/838/</guid><description>&lt;p>因为众所周知的原因，Linux默认的apt源在国内神慢……换吧&lt;/p>
+&lt;p>1.改sources.list&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/apt/sources.list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>内容全部改为&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>2.改raspi.list&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/apt/sources.list.d/raspi.list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>内容全部改为&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deb-src http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main ui
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="爽快">爽快！&lt;/h2></description></item></channel></rss>
